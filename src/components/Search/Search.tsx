@@ -41,11 +41,18 @@ type Content = {
 // Unified search item type
 type SearchItem = Model | Dealer | Service | Content;
 
+type Category = {
+  id: string;
+  name: string;
+  icon: string;
+  count: number;
+};
+
 const Search = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState<SearchItem[]>([]);
-  const [activeCategory, setActiveCategory] = useState('all');
+  const [activeCategory, setActiveCategory] = useState<string>('all');
   const searchRef = useRef<HTMLDivElement>(null);
 
   const searchData = {
@@ -73,7 +80,7 @@ const Search = () => {
     ]
   };
 
-  const categories = [
+  const categories: Category[] = [
     { id: 'all', name: 'All', icon: '🔍', count: 0 },
     { id: 'models', name: 'Models', icon: '🚗', count: searchData.models.length },
     { id: 'dealers', name: 'Dealers', icon: '🏢', count: searchData.dealers.length },
@@ -127,7 +134,7 @@ const Search = () => {
     }
   }, [searchQuery, activeCategory]);
 
-  const quickSearches = [
+  const quickSearches: string[] = [
     'BMW 3 Series', 'BMW X1', 'Nearest Dealer', 'Service Booking', 'Electric Vehicles'
   ];
 
@@ -246,7 +253,7 @@ const Search = () => {
                       <div className={styles.resultsHeader}>
                         <span>{searchResults.length} results found</span>
                         {activeCategory !== 'all' && (
-                          <span>in {categories.find(c => c.id === activeCategory)?.name}</span>
+                          <span> in {categories.find(c => c.id === activeCategory)?.name}</span>
                         )}
                       </div>
                       
