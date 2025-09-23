@@ -1,6 +1,7 @@
 'use client';
 
 import styles from './Configurator.module.css';
+import Image from 'next/image';
 
 const Configurator = () => {
   const configuratorItems = [
@@ -58,12 +59,15 @@ const Configurator = () => {
             <div 
               key={item.id} 
               className={styles.configuratorItem}
-              onClick={() => handleBuildClick(item.category)}
             >
-              <img 
-                src={item.image} 
+              <Image
+                src={item.image}
                 alt={item.title}
                 className={styles.configuratorImage}
+                width={1200}
+                height={800}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                unoptimized
                 onError={(e) => {
                 
                   const fallbacks = [
@@ -73,8 +77,10 @@ const Configurator = () => {
                   ];
                   e.currentTarget.src = fallbacks[item.id - 1];
                 }}
+                priority={item.id === 1}
               />
               
+              <div className={styles.overlay}></div>
               <div className={styles.overlay}></div>
               
              
