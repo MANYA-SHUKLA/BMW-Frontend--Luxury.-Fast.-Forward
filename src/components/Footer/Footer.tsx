@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import styles from './Footer.module.css';
 
 const Footer = () => {
@@ -93,10 +94,13 @@ const Footer = () => {
           
           <div className={styles.brandSection}>
             <div className={styles.logo}>
-              <img
+              <Image
                 src="https://www.bmw.in/content/dam/bmw/common/images/logo-icons/BMW/BMW_White_Logo.svg.asset.1670245093434.svg"
                 alt="BMW India Logo"
                 className={styles.logoImg}
+                width={80}
+                height={80}
+                priority
               />
             </div>
             <div className={styles.indiaBadge}>🇮🇳 BMW India</div>
