@@ -176,7 +176,7 @@
   transform: translateY(-2px);
 }
 
-/* Hover Reveal Effect */
+
 .hoverReveal {
   position: absolute;
   top: 50%;
@@ -213,7 +213,6 @@
   opacity: 0;
 }
 
-/* Luxury Accents */
 .luxuryBorder {
   position: absolute;
   top: 3rem;
@@ -242,7 +241,7 @@
   opacity: 1;
 }
 
-/* Responsive Design */
+
 @media (max-width: 1024px) {
   .configuratorGrid {
     grid-template-columns: repeat(2, 1fr);

@@ -35,7 +35,7 @@ const Configurator = () => {
 
   const handleBuildClick = (category: string) => {
     console.log(`Building ${category}`);
-    // In a real app, this would navigate to the configurator page
+    
     alert(`Launching ${category} Configurator`);
   };
 
@@ -65,7 +65,7 @@ const Configurator = () => {
                 alt={item.title}
                 className={styles.configuratorImage}
                 onError={(e) => {
-                  // Fallback images
+                
                   const fallbacks = [
                     'https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg',
                     'https://images.pexels.com/photos/358070/pexels-photo-358070.jpeg',
@@ -77,7 +77,7 @@ const Configurator = () => {
               
               <div className={styles.overlay}></div>
               
-              {/* Default Content */}
+             
               <div className={styles.content}>
                 <div className={styles.category}>{item.category}</div>
                 <h3 className={styles.title}>{item.title}</h3>
@@ -87,7 +87,7 @@ const Configurator = () => {
                 </button>
               </div>
 
-              {/* Hover Reveal Content */}
+         
               <div className={styles.hoverReveal}>
                 <h3 className={styles.hoverTitle}>{item.hoverTitle}</h3>
                 <p className={styles.hoverSubtitle}>{item.hoverSubtitle}</p>
