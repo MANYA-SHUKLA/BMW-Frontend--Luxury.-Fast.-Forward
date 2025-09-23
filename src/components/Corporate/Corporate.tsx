@@ -251,7 +251,7 @@ const Corporate = () => {
             </div>
           )}
 
-          {/* Careers Tab */}
+        
           {activeTab === 'careers' && (
             <div className={styles.careersSection}>
               <div className={styles.careersIntro}>
@@ -344,7 +344,7 @@ const Corporate = () => {
             </div>
           )}
 
-          {/* Corporate Governance Tab */}
+        
           {activeTab === 'governance' && (
             <div className={styles.governanceSection}>
               <div className={styles.governanceIntro}>
@@ -393,7 +393,6 @@ const Corporate = () => {
             </div>
           )}
 
-          {/* Press & Media Tab */}
           {activeTab === 'press' && (
             <div className={styles.pressSection}>
               <div className={styles.pressIntro}>
@@ -444,7 +443,7 @@ const Corporate = () => {
             </div>
           )}
 
-          {/* BMW Foundation Tab */}
+        
           {activeTab === 'foundation' && (
             <div className={styles.foundationSection}>
               <div className={styles.foundationIntro}>

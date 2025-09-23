@@ -77,7 +77,7 @@
   min-height: 600px;
 }
 
-/* About Section Styles */
+
 .aboutSection {
   padding: 3rem;
 }
@@ -242,7 +242,7 @@
   color: #666;
 }
 
-/* Careers Section Styles */
+
 .careersSection {
   padding: 3rem;
 }
@@ -431,8 +431,6 @@
   color: #666;
   font-size: 0.9rem;
 }
-
-/* Governance Section Styles */
 .governanceSection {
   padding: 3rem;
 }
@@ -489,7 +487,7 @@
   flex-shrink: 0;
 }
 
-/* Press Section Styles */
+
 .pressSection {
   padding: 3rem;
 }
@@ -624,7 +622,7 @@
   color: white;
 }
 
-/* Foundation Section Styles */
+
 .foundationSection {
   padding: 3rem;
 }
@@ -745,7 +743,7 @@
     gap: 0.5rem;
   }
 }
-/* ...existing code... */
+
 .governanceSection { color: #000; }
 .governanceSection h3,
 .governanceSection h4,
@@ -754,4 +752,3 @@
 .governanceSection span,
 .governanceSection li,
 .governanceSection strong { color: #000; }
-/* ...existing code... */
