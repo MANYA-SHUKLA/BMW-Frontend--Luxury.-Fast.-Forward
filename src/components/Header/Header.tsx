@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import styles from './Header.module.css';
 import Search from '../Search/Search';
 import Link from 'next/link';
@@ -130,10 +131,13 @@ const Header = () => {
       <nav className={styles.navContainer}>
      
         <Link href="/" className={styles.logo} aria-label="BMW Home">
-          <img 
+          <Image 
             src="https://www.bmw.in/content/dam/bmw/common/images/logo-icons/BMW/BMW_White_Logo.svg.asset.1670245093434.svg" 
             alt="BMW Logo" 
             className={styles.logoImg}
+            width={60}
+            height={30}
+            priority
           />
         </Link>
 
