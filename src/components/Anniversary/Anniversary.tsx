@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Image from 'next/image'; 
+import Image from 'next/image';
 import styles from './Anniversary.module.css';
 
 const Anniversary = () => {
@@ -198,7 +198,15 @@ const Anniversary = () => {
                 {featuredCars.map((car, index) => (
                   <div key={index} className={styles.carCard}>
                     <div className={styles.carImageContainer}>
-                      <img src={car.image} alt={car.name} className={styles.carImage} />
+                      <Image 
+                        src={car.image} 
+                        alt={car.name} 
+                        className={styles.carImage}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        placeholder="blur"
+                        blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaUMk6objM5efL6kY6qVLLtUoDDRnieqnsf/9k="
+                      />
                       <div className={styles.carYear}>{car.year}</div>
                     </div>
                     <div className={styles.carInfo}>

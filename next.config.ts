@@ -53,7 +53,7 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'stimg.cardekho.com', // Add this line
+        hostname: 'stimg.cardekho.com', 
       },
     ],
   },
