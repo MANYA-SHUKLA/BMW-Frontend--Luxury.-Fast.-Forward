@@ -4,29 +4,25 @@ import { useState } from 'react';
 import styles from './Newsletter.module.css';
 
 const Newsletter = () => {
-  const [email, setEmail] = useState<string>(''); // added type
-  const [showPopup, setShowPopup] = useState<boolean>(false); // added type
-  const [isSubmitting, setIsSubmitting] = useState<boolean>(false); // added type
+  const [email, setEmail] = useState<string>(''); 
+  const [showPopup, setShowPopup] = useState<boolean>(false); 
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false); 
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => { // typed event
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => { 
     e.preventDefault();
 
     if (!email) return;
 
     setIsSubmitting(true);
 
-    // Simulate API call delay
     await new Promise(resolve => setTimeout(resolve, 1000));
 
-    // In a real app, this would connect to a newsletter service
     console.log('Newsletter signup:', email);
 
-    // Show success popup
     setShowPopup(true);
     setEmail('');
     setIsSubmitting(false);
 
-    // Auto-hide popup after 3 seconds
     setTimeout(() => {
       setShowPopup(false);
     }, 3000);
@@ -76,7 +72,7 @@ const Newsletter = () => {
             </form>
 
             <p className={styles.privacyNote}>
-              By subscribing, you agree to our <a href="#privacy">Privacy Policy</a>. 
+              By subscribing, you agree to our <a href="#privacy">Privacy Policy</a>.{' '}
               You can unsubscribe at any time.
             </p>
           </div>
@@ -96,7 +92,7 @@ const Newsletter = () => {
             <h3 className={styles.popupTitle}>Subscription Successful!</h3>
 
             <p className={styles.popupMessage}>
-              Thank you for subscribing to BMW updates. You'll receive exclusive news, 
+              Thank you for subscribing to BMW updates. You&apos;ll receive exclusive news, 
               offers, and model announcements directly in your inbox.
             </p>
 
