@@ -79,7 +79,7 @@ const Newsletter = () => {
         </div>
       </section>
 
-      {/* Success Popup */}
+    
       {showPopup && (
         <div className={styles.popupOverlay} onClick={closePopup}>
           <div className={styles.popupContent} onClick={(e) => e.stopPropagation()}>
