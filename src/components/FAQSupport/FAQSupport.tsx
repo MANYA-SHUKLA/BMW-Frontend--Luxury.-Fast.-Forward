@@ -122,8 +122,8 @@ const FAQSupport = () => {
   const supportContacts = [
     {
       department: 'Customer Care',
-      phone: '1800-102-1234',
-      email: 'customer.care@bmw.in',
+      phone: '8005586588',
+      email: 'shuklamanya99@gmail.com',
       hours: '24/7'
     },
     {

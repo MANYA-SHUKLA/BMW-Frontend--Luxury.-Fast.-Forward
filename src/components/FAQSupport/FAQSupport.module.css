@@ -446,3 +446,96 @@
     min-width: 120px;
   }
 }
+/* Keep all text black throughout the FAQSupport component */
+.faqSupport,
+.faqSupport * {
+  color: black !important;
+}
+
+/* Header text */
+.header h2,
+.header p {
+  color: black !important;
+}
+
+/* Support Categories sidebar */
+.categoriesSidebar h3 {
+  color: black !important;
+}
+
+.categoryItem span,
+.categoryName,
+.faqCount {
+  color: black !important;
+}
+
+/* Quick Support section */
+.quickSupport h4,
+.quickSupport p,
+.emergencyTitle,
+.emergencyNumber {
+  color: black !important;
+}
+
+/* FAQ Content */
+.categoryHeader h3,
+.categoryHeader p {
+  color: black !important;
+}
+
+.faqQuestion span,
+.faqAnswer p {
+  color: black !important;
+}
+
+/* Support Tools section */
+.supportTools h4 {
+  color: black !important;
+}
+
+.toolCard h5,
+.toolCard p {
+  color: black !important;
+}
+
+.toolButton {
+  color: black !important;
+}
+
+/* Contact Support section */
+.contactSection h4 {
+  color: black !important;
+}
+
+.contactCard h5 {
+  color: black !important;
+}
+
+.contactInfo strong,
+.contactInfo span,
+.contactInfo a {
+  color: black !important;
+}
+
+.contactItem strong,
+.contactItem span,
+.contactItem a {
+  color: black !important;
+}
+
+/* FAQ items */
+.faqItem {
+  color: black !important;
+}
+
+/* All buttons and interactive elements */
+.categoryItem,
+.faqQuestion,
+.toolButton {
+  color: black !important;
+}
+
+/* Arrow and icons - keep emojis as they are, but any text content black */
+.arrow {
+  color: black !important;
+}
