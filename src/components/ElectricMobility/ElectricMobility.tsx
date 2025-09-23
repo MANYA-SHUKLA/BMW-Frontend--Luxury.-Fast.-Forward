@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import styles from './ElectricMobility.module.css';
 
 const ElectricMobility = () => {
@@ -20,7 +21,7 @@ const ElectricMobility = () => {
         </svg>
       ),
       title: 'Zero Emissions',
-      description: 'Drive with a clear conscience knowing you\'re contributing to a sustainable future with zero tailpipe emissions.'
+      description: 'Drive with a clear conscience knowing you&apos;re contributing to a sustainable future with zero tailpipe emissions.'
     },
     {
       icon: (
@@ -35,7 +36,6 @@ const ElectricMobility = () => {
 
   return (
     <section id="electric" className={styles.electric}>
-     
       <div className={styles.futuristicBg}>
         <div className={styles.circuitLine}></div>
         <div className={styles.circuitLine}></div>
@@ -54,17 +54,17 @@ const ElectricMobility = () => {
           </h2>
           
           <p className={styles.sectionSubtitle}>
-            Discover the next generation of sustainable luxury with BMW's electric vehicle lineup. 
+            Discover the next generation of sustainable luxury with BMW&apos;s electric vehicle lineup. 
             Combining cutting-edge technology with uncompromising performance for a driving experience like no other.
           </p>
 
-          <img 
-            src="https://www.bmw.in/en/topics/Fascination-BMW/electromobility2020-new/electric-cars/_jcr_content/root/maincontent/contentblueprint_215790074/container_copy_copy_/contentblueprint_694/contentblueprint/image.coreimg.jpeg/1752213323293/bmw-ix50-electric.jpeg" 
+          <Image
+            src="https://www.bmw.in/en/topics/Fascination-BMW/electromobility2020-new/electric-cars/_jcr_content/root/maincontent/contentblueprint_215790074/container_copy_copy_/contentblueprint_694/contentblueprint/image.coreimg.jpeg/1752213323293/bmw-ix50-electric.jpeg"
             alt="BMW Electric Vehicle"
+            width={700}
+            height={400}
             className={styles.electricImage}
-            onError={(e) => {
-              e.currentTarget.src = 'https://images.pexels.com/photos/3729464/pexels-photo-3729464.jpeg';
-            }}
+            priority
           />
 
           <div className={styles.featuresGrid}>
@@ -74,7 +74,7 @@ const ElectricMobility = () => {
                   {feature.icon}
                 </div>
                 <h3 className={styles.featureTitle}>{feature.title}</h3>
-                <p className={styles.featureDescription}>{feature.description}</p>
+                <p className={features.description}>{feature.description}</p>
               </div>
             ))}
           </div>
