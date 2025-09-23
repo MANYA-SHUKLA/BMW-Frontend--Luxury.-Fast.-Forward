@@ -447,3 +447,32 @@
     grid-template-columns: 1fr;
   }
 }
+
+.popularCategories h4 {
+  color: black !important;
+}
+
+.categoryCard {
+  color: black !important;
+}
+
+
+.cardName {
+  color: black !important;
+}
+
+.cardCount {
+  color: black !important;
+}
+
+.categoryButton {
+  color: black !important;
+}
+
+.categoryName {
+  color: black !important;
+}
+
+.categoryCount {
+  color: black !important;
+}
