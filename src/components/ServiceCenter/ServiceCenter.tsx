@@ -433,7 +433,7 @@ const ServiceCenter = () => {
                   </div>
                   <div className={styles.contactItem}>
                     <strong>Email:</strong>
-                    <span>warranty.india@bmw.com</span>
+                    <span>shuklamanya99@gmail.com</span>
                   </div>
                   <div className={styles.contactItem}>
                     <strong>Working Hours:</strong>

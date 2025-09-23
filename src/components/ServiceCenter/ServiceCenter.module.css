@@ -568,3 +568,105 @@
     text-align: center;
   }
 }
+/* Keep all text black throughout the ServiceCenter component */
+.serviceCenter,
+.serviceCenter * {
+  color: black !important;
+}
+
+/* Header text */
+.header h2,
+.header p {
+  color: black !important;
+}
+
+/* Tab navigation */
+.tabButton,
+.tabButton.active {
+  color: black !important;
+}
+
+/* Form elements */
+.serviceForm label,
+.serviceForm input,
+.serviceForm select,
+.serviceForm textarea,
+.serviceForm input::placeholder,
+.serviceForm textarea::placeholder {
+  color: black !important;
+}
+
+/* Service booking section */
+.bookingFormSection h3,
+.serviceBenefits h3 {
+  color: black !important;
+}
+
+.benefitCard h4,
+.benefitCard p {
+  color: black !important;
+}
+
+/* Maintenance packages */
+.maintenancePackages h3,
+.packageSubtitle,
+.packageCard h4,
+.packagePrice,
+.packageDuration,
+.packageFeatures li,
+.popularBadge {
+  color: black !important;
+}
+
+.packageButton {
+  color: black !important;
+}
+
+.packageInfo h4,
+.infoItem strong,
+.infoItem p {
+  color: black !important;
+}
+
+/* Warranty section */
+.warrantyInfo h3,
+.warrantyCard h4,
+.warrantyCard p,
+.warrantyPeriod,
+.coverageDetails h4,
+.coverageList h5,
+.coverageList li,
+.warrantyContact h4,
+.warrantyContact p,
+.contactItem strong,
+.contactItem span {
+  color: black !important;
+}
+
+/* Submit button */
+.submitButton {
+  color: black !important;
+}
+
+/* All headings */
+.serviceCenter h1,
+.serviceCenter h2,
+.serviceCenter h3,
+.serviceCenter h4,
+.serviceCenter h5 {
+  color: black !important;
+}
+
+/* All paragraphs and spans */
+.serviceCenter p,
+.serviceCenter span,
+.serviceCenter li {
+  color: black !important;
+}
+
+/* Contact details */
+.contactDetails .contactItem,
+.contactDetails .contactItem strong,
+.contactDetails .contactItem span {
+  color: black !important;
+}
