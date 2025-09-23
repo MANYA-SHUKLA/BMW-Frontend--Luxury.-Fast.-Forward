@@ -4,11 +4,29 @@ import { useState, useRef } from 'react';
 import Image from 'next/image';
 import styles from './Models.module.css';
 
-const Models = () => {
-  const [activeSeries, setActiveSeries] = useState('all');
-  const carouselRef = useRef<HTMLDivElement>(null);
+interface CarModel {
+  id: number;
+  name: string;
+  price: string;
+  image: string;
+  features: string[];
+  series: string;
+  electric: boolean;
+}
 
-  const modelSeries = [
+interface ModelSeries {
+  id: string;
+  name: string;
+  description: string;
+  icon: string;
+  models: CarModel[];
+}
+
+const Models = () => {
+  const [activeSeries, setActiveSeries] = useState<string>('all');
+  // Removed unused carouselRef
+
+  const modelSeries: ModelSeries[] = [
     {
       id: 'x-series',
       name: 'X Series',
@@ -72,7 +90,7 @@ const Models = () => {
           id: 6,
           name: 'BMW i7',
           price: '₹1.95 Crore',
-          image: 'https://img.autocarindia.com/ExtraImages/20230417070438_i7_M70.jpg?w=700&c=1',
+          image: 'https://img.autocarindia.com/ExtraImages/20230417070438_i7_M70.jpg',
           features: ['All-Electric', '544 HP', '31-inch Theater Screen', 'Executive Lounge'],
           series: '7-series',
           electric: true
@@ -106,7 +124,7 @@ const Models = () => {
           id: 8,
           name: 'BMW 330i',
           price: '₹45.90 Lakh',
-          image: 'https://i.ytimg.com/vi/KMQBNMP1nZk/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLArsNyoJSjvWbPITFjLvqoxihZ3KA',
+          image: 'https://i.ytimg.com/vi/KMQBNMP1nZk/hq720.jpg',
           features: ['2.0L Turbo', '255 HP', 'M Sport', 'Digital Cockpit'],
           series: '3-series',
           electric: false
@@ -150,7 +168,7 @@ const Models = () => {
           id: 12,
           name: 'BMW iX3',
           price: '₹68.90 Lakh',
-          image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR32uizuD_1zyErOEMCENluoXl8FJV52b1trQ&s',
+          image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR32uizuD_1zyErOEMCENluoXl8FJV52b1trQ',
           features: ['All-Electric', '286 HP', '460 km Range', 'xDrive'],
           series: 'electric',
           electric: true
@@ -160,21 +178,22 @@ const Models = () => {
   ];
 
   const allModels = modelSeries.flatMap(series => series.models);
-  const filteredModels = activeSeries === 'all' ? allModels : allModels.filter(model =>
-    activeSeries === 'electric' ? model.electric : model.series === activeSeries
-  );
+  const filteredModels = activeSeries === 'all' 
+    ? allModels 
+    : allModels.filter(model =>
+        activeSeries === 'electric' ? model.electric : model.series === activeSeries
+      );
 
-  const scrollLeft = () => {
-    if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: -400, behavior: 'smooth' });
-    }
+  // Fallback image for error handling
+  const fallbackImage = 'https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg';
+
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    const target = e.target as HTMLImageElement;
+    target.src = fallbackImage;
+    target.onerror = null; // Prevent infinite loop
   };
 
-  const scrollRight = () => {
-    if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: 400, behavior: 'smooth' });
-    }
-  };
+  const currentSeries = modelSeries.find(series => series.id === activeSeries);
 
   return (
     <section id="models" className={styles.models}>
@@ -214,18 +233,10 @@ const Models = () => {
         </div>
 
         {/* Series Info */}
-        {activeSeries !== 'all' && activeSeries !== 'electric' && (
+        {activeSeries !== 'all' && activeSeries !== 'electric' && currentSeries && (
           <div className={styles.seriesInfo}>
-            {modelSeries.find(series => series.id === activeSeries) && (
-              <>
-                <h3 className={styles.seriesName}>
-                  {modelSeries.find(series => series.id === activeSeries)?.name}
-                </h3>
-                <p className={styles.seriesDescription}>
-                  {modelSeries.find(series => series.id === activeSeries)?.description}
-                </p>
-              </>
-            )}
+            <h3 className={styles.seriesName}>{currentSeries.name}</h3>
+            <p className={styles.seriesDescription}>{currentSeries.description}</p>
           </div>
         )}
 
@@ -245,16 +256,18 @@ const Models = () => {
           {filteredModels.map((car) => (
             <div key={car.id} className={`${styles.modelCard} ${car.electric ? styles.electric : ''}`}>
               {car.electric && <div className={styles.electricTag}>Electric</div>}
-              <Image
-                src={car.image}
-                alt={car.name}
-                width={400}
-                height={250}
-                className={styles.carImage}
-                onError={(e) => {
-                  (e.target as HTMLImageElement).src = 'https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg';
-                }}
-              />
+              <div className={styles.imageContainer}>
+                <Image
+                  src={car.image}
+                  alt={car.name}
+                  width={400}
+                  height={250}
+                  className={styles.carImage}
+                  onError={handleImageError}
+                  placeholder="blur"
+                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaUMk6objMpSWdWRgWtUfNkynsw0//Z"
+                />
+              </div>
               <div className={styles.carInfo}>
                 <h3 className={styles.carName}>{car.name}</h3>
                 <div className={styles.carPrice}>Starting at {car.price}</div>
