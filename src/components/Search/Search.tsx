@@ -3,7 +3,6 @@
 import { useState, useEffect, useRef } from 'react';
 import styles from './Search.module.css';
 
-
 type Model = {
   id: number;
   name: string;
@@ -37,7 +36,6 @@ type Content = {
   category: string;
   description: string;
 };
-
 
 type SearchItem = Model | Dealer | Service | Content;
 
@@ -132,7 +130,7 @@ const Search = () => {
     } else {
       setSearchResults(filtered);
     }
-  }, [searchQuery, activeCategory]);
+  }, [searchQuery, activeCategory, searchData.content, searchData.dealers, searchData.models, searchData.services]);
 
   const quickSearches: string[] = [
     'BMW 3 Series', 'BMW X1', 'Nearest Dealer', 'Service Booking', 'Electric Vehicles'
@@ -167,18 +165,15 @@ const Search = () => {
 
   return (
     <>
-   
       <button className={styles.searchTrigger} onClick={openSearch} aria-label="Search">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
           <path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 0 0 1.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 0 0-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 0 0 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
         </svg>
       </button>
 
-     
       {isSearchOpen && (
         <div className={styles.searchOverlay}>
           <div className={styles.searchContainer} ref={searchRef}>
-         
             <div className={styles.searchHeader}>
               <div className={styles.searchInputContainer}>
                 <input
@@ -206,9 +201,7 @@ const Search = () => {
               </button>
             </div>
 
-           
             <div className={styles.searchContent}>
-            
               {!searchQuery && (
                 <div className={styles.quickSearches}>
                   <h4>Quick Searches</h4>
@@ -226,7 +219,6 @@ const Search = () => {
                 </div>
               )}
 
-              
               {searchQuery && (
                 <div className={styles.categoryFilters}>
                   {categories.map(category => (
@@ -245,14 +237,13 @@ const Search = () => {
                 </div>
               )}
 
-           
               {searchQuery && (
                 <div className={styles.searchResults}>
                   {searchResults.length > 0 ? (
                     <>
                       <div className={styles.resultsHeader}>
                         <span>{searchResults.length} results found</span>
-                        {activeCategory !== 'all' && (
+                        {activeCategory !== &apos;all&apos; && (
                           <span> in {categories.find(c => c.id === activeCategory)?.name}</span>
                         )}
                       </div>
@@ -295,7 +286,6 @@ const Search = () => {
                 </div>
               )}
 
-              
               {!searchQuery && (
                 <div className={styles.popularCategories}>
                   <h4>Browse Categories</h4>

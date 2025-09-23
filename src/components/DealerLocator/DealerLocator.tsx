@@ -234,7 +234,7 @@ const DealerLocator = () => {
 
         <div className={styles.contactSection}>
           <div className={styles.contactCard}>
-            <h3>Can't Find a Dealer Near You?</h3>
+            <h3>Can&apos;t Find a Dealer Near You?</h3>
             <p>Contact BMW India directly for assistance in locating the nearest dealership or for corporate inquiries.</p>
             <div className={styles.contactMethods}>
               <div className={styles.contactMethod}>
