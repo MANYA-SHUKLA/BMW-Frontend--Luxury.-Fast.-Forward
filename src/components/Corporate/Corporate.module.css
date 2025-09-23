@@ -752,3 +752,77 @@
 .governanceSection span,
 .governanceSection li,
 .governanceSection strong { color: #000; }
+/* Keep all text black throughout the Corporate component */
+.corporate,
+.corporate * {
+  color: black !important;
+}
+
+/* Specific elements */
+.header h2,
+.header p {
+  color: black !important;
+}
+
+/* Tab navigation */
+.tabButton,
+.tabButton.active {
+  color: black !important;
+}
+
+/* All headings */
+.corporate h1,
+.corporate h2,
+.corporate h3,
+.corporate h4,
+.corporate h5,
+.corporate h6 {
+  color: black !important;
+}
+
+/* All paragraphs and text */
+.corporate p,
+.corporate span,
+.corporate div,
+.corporate li {
+  color: black !important;
+}
+
+/* Cards and content blocks */
+.statCard,
+.benefitCard,
+.jobCard,
+.complianceItem,
+.csrCard,
+.releaseCard,
+.programCard {
+  color: black !important;
+}
+
+/* Specific text elements */
+.statNumber,
+.statLabel,
+.jobTitle,
+.jobMeta,
+.memberName,
+.memberPosition,
+.benefitIcon,
+.stepContent,
+.releaseHeader,
+.programImpact {
+  color: black !important;
+}
+
+/* Buttons text */
+.applyButton,
+.readMoreButton,
+.downloadButton,
+.contactButton {
+  color: black !important;
+}
+
+/* Contact info */
+.contactInfo,
+.contactItem {
+  color: black !important;
+}
