@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef } from 'react';
+import Image from 'next/image';
 import styles from './Models.module.css';
 
 const Models = () => {
@@ -159,7 +160,7 @@ const Models = () => {
   ];
 
   const allModels = modelSeries.flatMap(series => series.models);
-  const filteredModels = activeSeries === 'all' ? allModels : allModels.filter(model => 
+  const filteredModels = activeSeries === 'all' ? allModels : allModels.filter(model =>
     activeSeries === 'electric' ? model.electric : model.series === activeSeries
   );
 
@@ -178,7 +179,7 @@ const Models = () => {
   return (
     <section id="models" className={styles.models}>
       <div className={styles.luxuryAccent}></div>
-      
+
       <div className={styles.container}>
         <div className={styles.sectionHeader}>
           <h2 className={styles.sectionTitle}>BMW Model Explorer</h2>
@@ -187,14 +188,15 @@ const Models = () => {
           </p>
         </div>
 
+        {/* Series Filter */}
         <div className={styles.seriesFilter}>
-          <button 
+          <button
             className={`${styles.filterButton} ${activeSeries === 'all' ? styles.active : ''}`}
             onClick={() => setActiveSeries('all')}
           >
             All Models
           </button>
-          <button 
+          <button
             className={`${styles.filterButton} ${activeSeries === 'electric' ? styles.active : ''}`}
             onClick={() => setActiveSeries('electric')}
           >
@@ -211,6 +213,7 @@ const Models = () => {
           ))}
         </div>
 
+        {/* Series Info */}
         {activeSeries !== 'all' && activeSeries !== 'electric' && (
           <div className={styles.seriesInfo}>
             {modelSeries.find(series => series.id === activeSeries) && (
@@ -226,28 +229,30 @@ const Models = () => {
           </div>
         )}
 
+        {/* Electric Vehicles Highlight */}
         {activeSeries === 'electric' && (
           <div className={styles.electricHighlight}>
             <div className={styles.electricBadge}>⚡ BMW i</div>
             <h3 className={styles.electricTitle}>Electric Innovation</h3>
             <p className={styles.electricDesc}>
-              Experience the future of driving with BMW's all-electric lineup. 
-              Zero emissions, maximum performance.
+              Experience the future of driving with BMW&apos;s all-electric lineup. Zero emissions, maximum performance.
             </p>
           </div>
         )}
 
-        
+        {/* Models Grid */}
         <div className={styles.modelsGrid}>
           {filteredModels.map((car) => (
             <div key={car.id} className={`${styles.modelCard} ${car.electric ? styles.electric : ''}`}>
               {car.electric && <div className={styles.electricTag}>Electric</div>}
-              <img 
-                src={car.image} 
+              <Image
+                src={car.image}
                 alt={car.name}
+                width={400}
+                height={250}
                 className={styles.carImage}
                 onError={(e) => {
-                  e.currentTarget.src = 'https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg';
+                  (e.target as HTMLImageElement).src = 'https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg';
                 }}
               />
               <div className={styles.carInfo}>
@@ -271,7 +276,6 @@ const Models = () => {
           ))}
         </div>
 
-       
         <div className={styles.indiaNote}>
           <div className={styles.indiaBadge}>🇮🇳 BMW India</div>
           <p>All prices are ex-showroom India. Contact your nearest BMW dealership for test drives and offers.</p>
