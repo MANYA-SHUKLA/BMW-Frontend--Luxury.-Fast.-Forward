@@ -1,5 +1,6 @@
 'use client';
-import Image from 'next/image'; 
+
+import Image from 'next/image';
 import styles from './BrandStory.module.css';
 
 const BrandStory = () => {
@@ -40,13 +41,17 @@ const BrandStory = () => {
          
           <div className={styles.imageSection}>
             <div className={styles.imageBadge}>Since 1916</div>
-            <img 
+            <Image 
               src="https://images.pexels.com/photos/164634/pexels-photo-164634.jpeg" 
               alt="BMW Legacy and Innovation"
+              width={600}
+              height={400}
               className={styles.brandImage}
               onError={(e) => {
                 e.currentTarget.src = 'https://images.pexels.com/photos/1209777/pexels-photo-1209777.jpeg';
               }}
+              placeholder="blur"
+              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaUMk6objMpSWdWRgWtUfNkynsw0//Z"
             />
           </div>
 
@@ -62,7 +67,7 @@ const BrandStory = () => {
               For over a century, BMW has stood at the forefront of automotive excellence. 
               Our commitment to innovation, quality, and driving pleasure has made us the 
               choice for discerning drivers worldwide. From the first aircraft engines to 
-              today&apos;s  cutting-edge electric vehicles, our passion for engineering perfection 
+              today&apos;s cutting-edge electric vehicles, our passion for engineering perfection 
               remains unchanged.
             </p>
 
@@ -89,8 +94,8 @@ const BrandStory = () => {
         
         <div className={styles.quoteSection}>
           <p className={styles.quoteText}>
-            "Sheer Driving Pleasure is not just a slogan - it&apos;s our promise. 
-            A commitment to delivering unforgettable experiences behind the wheel."
+            &ldquo;Sheer Driving Pleasure is not just a slogan - it&apos;s our promise. 
+            A commitment to delivering unforgettable experiences behind the wheel.&rdquo;
           </p>
           <p className={styles.quoteAuthor}>— BMW Philosophy</p>
         </div>
