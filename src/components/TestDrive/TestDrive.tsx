@@ -3,8 +3,19 @@
 import { useState } from 'react';
 import styles from './TestDrive.module.css';
 
+interface FormData {
+  fullName: string;
+  email: string;
+  phone: string;
+  preferredModel: string;
+  preferredDate: string;
+  preferredTime: string;
+  location: string;
+  message: string;
+}
+
 const TestDrive = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     fullName: '',
     email: '',
     phone: '',
@@ -40,14 +51,16 @@ const TestDrive = () => {
     'Kolkata', 'Pune', 'Ahmedabad', 'Jaipur', 'Chandigarh'
   ];
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Simulate API call
     setTimeout(() => {

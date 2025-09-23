@@ -301,7 +301,7 @@ const ServiceCenter = () => {
                   <div className={styles.benefitCard}>
                     <div className={styles.benefitIcon}>🛡️</div>
                     <h4>Warranty Protected</h4>
-                    <p>Service that maintains your vehicle's warranty coverage</p>
+                    <p>Service that maintains your vehicle&apos;s warranty coverage</p>
                   </div>
                 </div>
               </div>
@@ -398,7 +398,7 @@ const ServiceCenter = () => {
               </div>
 
               <div className={styles.coverageDetails}>
-                <h4>What's Covered</h4>
+                <h4>What&apos;s Covered</h4>
                 <div className={styles.coverageGrid}>
                   <div className={styles.coverageList}>
                     <h5>✅ Included</h5>
