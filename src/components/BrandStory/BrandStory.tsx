@@ -62,7 +62,7 @@ const BrandStory = () => {
               For over a century, BMW has stood at the forefront of automotive excellence. 
               Our commitment to innovation, quality, and driving pleasure has made us the 
               choice for discerning drivers worldwide. From the first aircraft engines to 
-              today's cutting-edge electric vehicles, our passion for engineering perfection 
+              today&apos;s  cutting-edge electric vehicles, our passion for engineering perfection 
               remains unchanged.
             </p>
 
