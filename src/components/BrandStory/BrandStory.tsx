@@ -1,5 +1,5 @@
 'use client';
-
+import Image from 'next/image'; 
 import styles from './BrandStory.module.css';
 
 const BrandStory = () => {
@@ -89,7 +89,7 @@ const BrandStory = () => {
         
         <div className={styles.quoteSection}>
           <p className={styles.quoteText}>
-            "Sheer Driving Pleasure is not just a slogan - it's our promise. 
+            "Sheer Driving Pleasure is not just a slogan - it&apos;s our promise. 
             A commitment to delivering unforgettable experiences behind the wheel."
           </p>
           <p className={styles.quoteAuthor}>— BMW Philosophy</p>

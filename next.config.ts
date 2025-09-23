@@ -51,6 +51,10 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'bmw.scene7.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'stimg.cardekho.com', // Add this line
+      },
     ],
   },
 };
