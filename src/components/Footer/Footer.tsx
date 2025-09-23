@@ -89,9 +89,7 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
-      
         <div className={styles.footerContent}>
-          
           <div className={styles.brandSection}>
             <div className={styles.logo}>
               <Image
@@ -109,7 +107,6 @@ const Footer = () => {
               crafted for Indian roads and driving conditions.
             </p>
 
-         
             <div className={styles.socialSection}>
               <h4>Follow BMW India</h4>
               <div className={styles.socialLinks}>
@@ -129,7 +126,6 @@ const Footer = () => {
             </div>
           </div>
 
-
           <div className={styles.linksSection}>
             <h3>Customer Support</h3>
             <ul className={styles.footerLinks}>
@@ -147,7 +143,6 @@ const Footer = () => {
             </ul>
           </div>
 
-        
           <div className={styles.linksSection}>
             <h3>Dealer & Contact</h3>
             <ul className={styles.footerLinks}>
@@ -190,7 +185,6 @@ const Footer = () => {
           </div>
         </div>
 
-     
         <div className={styles.indiaInfo}>
           <div className={styles.indiaContent}>
             <h4>BMW India Operations</h4>
@@ -200,7 +194,6 @@ const Footer = () => {
           </div>
         </div>
 
-      
         <div className={styles.footerBottom}>
           <div className={styles.copyrightSection}>
             <div className={styles.copyright}>
