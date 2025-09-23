@@ -1,0 +1,570 @@
+.serviceCenter {
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.header h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 1rem;
+}
+
+.header p {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.tabNavigation {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+  background: white;
+  padding: 1rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e9ecef;
+}
+
+.tabButton {
+  padding: 1.2rem 2rem;
+  border: none;
+  background: transparent;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 10px;
+  margin: 0 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tabButton.active {
+  background: var(--bmw-blue);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(28, 105, 212, 0.3);
+}
+
+.tabButton:hover:not(.active) {
+  background: #f8f9fa;
+}
+
+.tabContent {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Service Booking Styles */
+.serviceBooking {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 0;
+}
+
+.bookingFormSection {
+  padding: 3rem;
+  border-right: 1px solid #e9ecef;
+}
+
+.bookingFormSection h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--black);
+}
+
+.serviceForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup label {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+  padding: 1rem;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: white;
+  color: #000; /* ensure typed text is visible */
+  -webkit-text-fill-color: #000; /* for WebKit */
+  caret-color: var(--bmw-blue);
+}
+
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: var(--bmw-blue);
+  box-shadow: 0 0 0 3px rgba(28, 105, 212, 0.1);
+  color: #000;
+  -webkit-text-fill-color: #000;
+}
+
+/* Placeholder visibility */
+.formGroup input::placeholder,
+.formGroup textarea::placeholder {
+  color: #666;
+}
+
+/* Select options text color */
+.formGroup select option {
+  color: #000;
+}
+
+/* Autofill adjustments */
+.formGroup input:-webkit-autofill,
+.formGroup input:-webkit-autofill:hover,
+.formGroup input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #000 !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.submitButton {
+  background: var(--bmw-blue);
+  color: white;
+  border: none;
+  padding: 1.2rem 2rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.submitButton:hover {
+  background: #1556a0;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(28, 105, 212, 0.3);
+}
+
+.serviceBenefits {
+  padding: 3rem;
+  background: #f8f9fa;
+}
+
+.serviceBenefits h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.benefitsGrid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.benefitCard {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border-left: 4px solid var(--bmw-blue);
+}
+
+.benefitIcon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.benefitCard h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.benefitCard p {
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Maintenance Packages Styles */
+.maintenancePackages {
+  padding: 3rem;
+}
+
+.maintenancePackages h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+  text-align: center;
+}
+
+.packageSubtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+}
+
+.packagesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.packageCard {
+  background: white;
+  border: 2px solid #e9ecef;
+  border-radius: 15px;
+  padding: 2rem;
+  position: relative;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.packageCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.packageCard.popular {
+  border-color: var(--bmw-blue);
+  background: linear-gradient(135deg, #f8f9fa, white);
+}
+
+.popularBadge {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bmw-blue);
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.packageHeader h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.packagePrice {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--bmw-blue);
+  margin-bottom: 0.5rem;
+}
+
+.packageDuration {
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.packageFeatures {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.packageFeatures li {
+  padding: 0.5rem 0;
+  color: #666;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.packageFeatures li::before {
+  content: '✓';
+  color: var(--bmw-blue);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.packageButton {
+  width: 100%;
+  padding: 1rem 2rem;
+  background: var(--bmw-blue);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.packageButton:hover {
+  background: #1556a0;
+  transform: translateY(-2px);
+}
+
+.packageInfo {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.packageInfo h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.infoItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.infoIcon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.infoItem strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.infoItem p {
+  color: #666;
+  margin: 0;
+}
+
+/* Warranty Info Styles */
+.warrantyInfo {
+  padding: 3rem;
+}
+
+.warrantyInfo h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #333;
+  text-align: center;
+}
+
+.warrantyOverview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.warrantyCard {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  border-left: 4px solid var(--bmw-blue);
+}
+
+.warrantyCard h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.warrantyPeriod {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--bmw-blue);
+  margin-bottom: 1rem;
+}
+
+.coverageDetails {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  border: 1px solid #e9ecef;
+  margin-bottom: 2rem;
+}
+
+.coverageDetails h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.coverageGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.coverageList h5 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.coverageList ul {
+  list-style: none;
+  padding: 0;
+}
+
+.coverageList li {
+  padding: 0.3rem 0;
+  color: #666;
+}
+
+.warrantyContact {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.warrantyContact h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.warrantyContact p {
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.contactDetails {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.contactItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+}
+
+.contactItem strong {
+  color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .serviceBooking {
+    grid-template-columns: 1fr;
+  }
+  
+  .bookingFormSection {
+    border-right: none;
+    border-bottom: 1px solid #e9ecef;
+  }
+  
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .coverageGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .serviceCenter {
+    padding: 4rem 1rem;
+  }
+  
+  .header h2 {
+    font-size: 2.5rem;
+  }
+  
+  .tabNavigation {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .tabButton {
+    margin: 0;
+  }
+  
+  .bookingFormSection,
+  .serviceBenefits {
+    padding: 2rem;
+  }
+  
+  .packagesGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .header h2 {
+    font-size: 2rem;
+  }
+  
+  .warrantyOverview {
+    grid-template-columns: 1fr;
+  }
+  
+  .contactDetails {
+    grid-template-columns: 1fr;
+  }
+  
+  .contactItem {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+}

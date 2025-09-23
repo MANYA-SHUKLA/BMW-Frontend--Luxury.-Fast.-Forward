@@ -1,0 +1,482 @@
+.dealerLocator {
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  color: white;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.header h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #ffffff 0%, #d7d7d7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.header p {
+  font-size: 1.2rem;
+  color: var(--metallic-gray);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.searchSection {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.searchBox {
+  flex: 2;
+  min-width: 300px;
+}
+
+.searchInput {
+  position: relative;
+}
+
+.searchInput input {
+  width: 100%;
+  padding: 1.2rem 3rem 1.2rem 1.5rem;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.searchInput input:focus {
+  outline: none;
+  border-color: var(--bmw-blue);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.searchInput input::placeholder {
+  color: var(--metallic-gray);
+}
+
+.searchIcon {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+}
+
+.cityFilter {
+  flex: 1;
+  min-width: 200px;
+}
+
+.cityFilter label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--metallic-gray);
+}
+
+.cityFilter select {
+  width: 100%;
+  padding: 1.2rem 1.5rem;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.cityFilter select:focus {
+  outline: none;
+  border-color: var(--bmw-blue);
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.dealersList {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.resultsInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.dealerCard {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.dealerCard:hover {
+  transform: translateY(-5px);
+  border-color: var(--bmw-blue);
+  box-shadow: 0 10px 30px rgba(28, 105, 212, 0.2);
+}
+
+.dealerCard.premium {
+  border-color: #ffd700;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.05), transparent);
+}
+
+.premiumBadge {
+  position: absolute;
+  top: -10px;
+  right: 2rem;
+  background: #ffd700;
+  color: black;
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.dealerHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.dealerHeader h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.cityTag {
+  background: var(--bmw-blue);
+  color: white;
+  padding: 0.3rem 1rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.dealerInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--metallic-gray);
+}
+
+.infoItem .icon {
+  font-size: 1.1rem;
+  width: 20px;
+  text-align: center;
+}
+
+.infoItem a {
+  color: var(--metallic-gray);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.infoItem a:hover {
+  color: var(--bmw-blue);
+}
+
+.servicesSection,
+.amenitiesSection {
+  margin-bottom: 1.5rem;
+}
+
+.servicesSection h4,
+.amenitiesSection h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  color: var(--metallic-gray);
+}
+
+.servicesList,
+.amenitiesList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.serviceTag,
+.amenityTag {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.actionButtons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.primaryButton,
+.secondaryButton,
+.tertiaryButton {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+  min-width: 120px;
+}
+
+.primaryButton {
+  background: var(--bmw-blue);
+  color: white;
+}
+
+.secondaryButton {
+  background: transparent;
+  color: var(--metallic-gray);
+  border: 2px solid var(--metallic-gray);
+}
+
+.tertiaryButton {
+  background: transparent;
+  color: var(--bmw-blue);
+  border: 2px solid var(--bmw-blue);
+}
+
+.primaryButton:hover {
+  background: #1556a0;
+  transform: translateY(-2px);
+}
+
+.secondaryButton:hover {
+  background: var(--metallic-gray);
+  color: black;
+}
+
+.tertiaryButton:hover {
+  background: var(--bmw-blue);
+  color: white;
+}
+
+.mapSection {
+  position: sticky;
+  top: 2rem;
+  height: fit-content;
+}
+
+.mapPlaceholder {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 2rem;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mapContent {
+  text-align: center;
+}
+
+.mapContent h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.mapContent p {
+  color: var(--metallic-gray);
+  margin-bottom: 2rem;
+}
+
+.mapStats {
+  display: flex;
+  justify-content: space-around;
+  margin: 2rem 0;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.statNumber {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--bmw-blue);
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  color: var(--metallic-gray);
+  margin-top: 0.5rem;
+}
+
+.mapFeatures h4 {
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 1rem;
+}
+
+.mapFeatures ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.mapFeatures li {
+  padding: 0.3rem 0;
+  color: var(--metallic-gray);
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.mapFeatures li::before {
+  content: '✓';
+  color: var(--bmw-blue);
+  position: absolute;
+  left: 0;
+}
+
+.contactSection {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 3rem;
+  text-align: center;
+}
+
+.contactCard h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.contactCard p {
+  color: var(--metallic-gray);
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.contactMethods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contactMethod {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  text-align: left;
+}
+
+.contactIcon {
+  font-size: 2rem;
+}
+
+.contactMethod strong {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+  
+  .mapSection {
+    position: static;
+  }
+  
+  .mapPlaceholder {
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dealerLocator {
+    padding: 4rem 1rem;
+  }
+  
+  .header h2 {
+    font-size: 2.5rem;
+  }
+  
+  .searchSection {
+    flex-direction: column;
+  }
+  
+  .actionButtons {
+    flex-direction: column;
+  }
+  
+  .contactSection {
+    padding: 2rem;
+  }
+  
+  .contactMethods {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .header h2 {
+    font-size: 2rem;
+  }
+  
+  .dealerCard {
+    padding: 1.5rem;
+  }
+  
+  .dealerHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}

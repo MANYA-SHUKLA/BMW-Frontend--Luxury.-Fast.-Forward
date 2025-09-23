@@ -1,0 +1,287 @@
+.electric {
+  padding: 8rem 2rem;
+  background: linear-gradient(135deg, #000000 0%, #0a1f3a 50%, #000000 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.sectionBadge {
+  display: inline-block;
+  background: rgba(28, 105, 212, 0.2);
+  color: var(--bmw-blue);
+  padding: 0.5rem 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: 1px solid rgba(28, 105, 212, 0.3);
+  border-radius: 20px;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(10px);
+}
+
+.sectionTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  background: linear-gradient(135deg, #ffffff 0%, #1c69d4 50%, #ffffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.sectionSubtitle {
+  font-size: 1.2rem;
+  color: var(--metallic-gray);
+  line-height: 1.6;
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.electricImage {
+  width: 100%;
+  max-width: 900px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin: 3rem auto;
+  box-shadow: 0 20px 60px rgba(28, 105, 212, 0.3);
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.electricImage:hover {
+  transform: scale(1.02);
+  box-shadow: 0 30px 80px rgba(28, 105, 212, 0.4);
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 4rem 0;
+}
+
+.featureCard {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.featureCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(28, 105, 212, 0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.featureCard:hover::before {
+  left: 100%;
+}
+
+.featureCard:hover {
+  transform: translateY(-5px);
+  border-color: var(--bmw-blue);
+  box-shadow: 0 15px 40px rgba(28, 105, 212, 0.2);
+}
+
+.featureIcon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--bmw-blue), #0a4a9e);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+.featureIcon svg {
+  width: 30px;
+  height: 30px;
+  fill: var(--white);
+}
+
+.featureTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--white);
+}
+
+.featureDescription {
+  color: var(--metallic-gray);
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.ctaButton {
+  background: transparent;
+  color: var(--white);
+  border: 2px solid var(--bmw-blue);
+  padding: 1.2rem 3rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 30px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 2rem;
+}
+
+.ctaButton:hover {
+  background: var(--bmw-blue);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(28, 105, 212, 0.4);
+  letter-spacing: 3px;
+}
+
+.ctaButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.ctaButton:hover::before {
+  left: 100%;
+}
+
+/* Futuristic Background Elements */
+.futuristicBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.circuitLine {
+  position: absolute;
+  background: linear-gradient(90deg, transparent, var(--bmw-blue), transparent);
+  height: 1px;
+  opacity: 0.1;
+  animation: circuitFlow 6s linear infinite;
+}
+
+.circuitLine:nth-child(1) { top: 20%; left: -100%; width: 100%; animation-delay: 0s; }
+.circuitLine:nth-child(2) { top: 40%; left: -100%; width: 100%; animation-delay: 2s; }
+.circuitLine:nth-child(3) { top: 60%; left: -100%; width: 100%; animation-delay: 4s; }
+.circuitLine:nth-child(4) { top: 80%; left: -100%; width: 100%; animation-delay: 1s; }
+
+@keyframes circuitFlow {
+  0% { left: -100%; opacity: 0; }
+  50% { opacity: 0.3; }
+  100% { left: 100%; opacity: 0; }
+}
+
+.glowOrb {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(28, 105, 212, 0.1) 0%, transparent 70%);
+  animation: float 6s ease-in-out infinite;
+}
+
+.glowOrb:nth-child(1) { top: -150px; right: -150px; animation-delay: 0s; }
+.glowOrb:nth-child(2) { bottom: -150px; left: -150px; animation-delay: 3s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-20px) scale(1.1); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .electric {
+    padding: 6rem 1rem;
+  }
+  
+  .sectionTitle {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+  }
+  
+  .electricImage {
+    height: 300px;
+    margin: 2rem auto;
+  }
+  
+  .featuresGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin: 3rem 0;
+  }
+  
+  .featureCard {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sectionTitle {
+    font-size: 2rem;
+  }
+  
+  .sectionSubtitle {
+    font-size: 1rem;
+  }
+  
+  .electricImage {
+    height: 250px;
+  }
+  
+  .ctaButton {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+}

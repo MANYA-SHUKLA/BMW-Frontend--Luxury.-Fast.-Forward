@@ -1,0 +1,490 @@
+.promoBanner {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, #0a0a0a 0%, #000000 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  min-height: 700px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* Image Section */
+.imageSection {
+  position: relative;
+  overflow: hidden;
+}
+
+.promoImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.imageSection:hover .promoImage {
+  transform: scale(1.05);
+}
+
+.imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(28, 105, 212, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Countdown Timer */
+.countdown {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.countdownTitle {
+  color: var(--white);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.timer {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.timeUnit {
+  text-align: center;
+}
+
+.timeValue {
+  display: block;
+  color: var(--bmw-blue);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem;
+  border-radius: 5px;
+  min-width: 50px;
+}
+
+.timeLabel {
+  display: block;
+  color: var(--metallic-gray);
+  font-size: 0.7rem;
+  margin-top: 0.3rem;
+  text-transform: uppercase;
+}
+
+/* Content Section */
+.contentSection {
+  background: var(--white);
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow-y: auto;
+}
+
+.contentSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--bmw-blue), #0a4a9e);
+}
+
+.promoBadge {
+  background: var(--bmw-blue);
+  color: var(--white);
+  padding: 0.5rem 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  border-radius: 2px;
+}
+
+.promoTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.highlight {
+  color: var(--bmw-blue);
+  position: relative;
+}
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: currentColor;
+  opacity: 0.3;
+}
+
+.promoDescription {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* Finance Offers */
+.financeOffers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.financeCard {
+  display: flex;
+  align-items: center;
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--bmw-blue);
+}
+
+.financeIcon {
+  font-size: 2rem;
+  margin-right: 1rem;
+}
+
+.financeDetails {
+  flex: 1;
+}
+
+.financeTitle {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.3rem;
+}
+
+.financeRate {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--bmw-blue);
+  margin-bottom: 0.2rem;
+}
+
+.financeDesc {
+  font-size: 0.8rem;
+  color: #999;
+}
+
+/* Offers Grid */
+.offersGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.offerCard {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 10px;
+  position: relative;
+  border: 1px solid #e9ecef;
+  transition: transform 0.3s ease;
+}
+
+.offerCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.offerBadge {
+  position: absolute;
+  top: -10px;
+  right: 1rem;
+  padding: 0.3rem 1rem;
+  border-radius: 15px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.LimitedTime {
+  background: #ff6b6b;
+  color: white;
+}
+
+.Corporate {
+  background: #51cf66;
+  color: white;
+}
+
+.Exchange {
+  background: #ffa94d;
+  color: white;
+}
+
+.offerTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--black);
+  margin-bottom: 0.5rem;
+}
+
+.offerSubtitle {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.offerDiscount {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--bmw-blue);
+  margin-bottom: 0.3rem;
+}
+
+.offerEmi {
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 0.3rem;
+}
+
+.offerValidity {
+  font-size: 0.8rem;
+  color: #999;
+  font-style: italic;
+}
+
+/* EMI Preview */
+.emiPreview {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.emiTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--black);
+  margin-bottom: 1rem;
+}
+
+.emiExamples {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.8rem;
+}
+
+.emiExample {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem;
+  background: white;
+  border-radius: 5px;
+  border-left: 3px solid var(--bmw-blue);
+}
+
+.emiExample span:first-child {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.emiExample span:last-child {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: var(--bmw-blue);
+}
+
+.ctaContainer {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+.ctaPrimary {
+  background: var(--bmw-blue);
+  color: var(--black);
+  border: none;
+  padding: 1rem 2rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+  flex: 1;
+}
+
+.ctaPrimary:hover {
+  background: #1556a0;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(28, 105, 212, 0.3);
+}
+
+.ctaSecondary {
+  background: transparent;
+  color: var(--black);
+  border: 2px solid var(--black);
+  padding: 1rem 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+  flex: 1;
+}
+
+.ctaSecondary:hover {
+  background: var(--black);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+.ctaTertiary {
+  background: transparent;
+  color: #666;
+  border: 2px solid #ddd;
+  padding: 1rem 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+  flex: 1;
+}
+
+.ctaTertiary:hover {
+  background: #666;
+  color: var(--white);
+  border-color: #666;
+}
+
+.terms {
+  font-size: 0.8rem;
+  color: #999;
+  text-align: center;
+  margin-top: 1rem;
+}
+}
+/* Luxury Accents */
+.luxuryBorder {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  bottom: 2rem;
+  left: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+  border-radius: 18px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .container {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  
+  .imageSection {
+    height: 400px;
+  }
+  
+  .contentSection {
+    padding: 2rem;
+  }
+  
+  .financeOffers {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .promoBanner {
+    padding: 4rem 1rem;
+  }
+  
+  .promoTitle {
+    font-size: 1.8rem;
+  }
+  
+  .contentSection {
+    padding: 1.5rem;
+  }
+  
+  .ctaContainer {
+    flex-direction: column;
+  }
+  
+  .countdown {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 1rem;
+  }
+  
+  .timer {
+    gap: 0.5rem;
+  }
+  
+  .timeValue {
+    font-size: 1.2rem;
+    min-width: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .promoTitle {
+    font-size: 1.6rem;
+  }
+  
+  .promoDescription {
+    font-size: 0.9rem;
+  }
+  
+  .offersGrid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,307 @@
+.configurator {
+  padding: 8rem 2rem;
+  background: linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #000000 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.sectionTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #ffffff 0%, #d7d7d7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sectionSubtitle {
+  font-size: 1.2rem;
+  color: var(--metallic-gray);
+  letter-spacing: 1px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.configuratorGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.configuratorItem {
+  position: relative;
+  height: 500px;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.configuratorItem:hover {
+  transform: translateY(-10px);
+  border-color: var(--bmw-blue);
+  box-shadow: 0 25px 50px rgba(28, 105, 212, 0.3);
+}
+
+.configuratorImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease;
+}
+
+.configuratorItem:hover .configuratorImage {
+  transform: scale(1.1);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.1) 30%,
+    rgba(0, 0, 0, 0.7) 80%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+  transition: all 0.4s ease;
+}
+
+.configuratorItem:hover .overlay {
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(28, 105, 212, 0.1) 30%,
+    rgba(28, 105, 212, 0.3) 80%,
+    rgba(28, 105, 212, 0.5) 100%
+  );
+}
+
+.content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 2.5rem;
+  z-index: 3;
+  transition: all 0.4s ease;
+}
+
+.configuratorItem:hover .content {
+  transform: translateY(-10px);
+}
+
+.category {
+  display: inline-block;
+  background: var(--bmw-blue);
+  color: var(--white);
+  padding: 0.5rem 1.2rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 2px;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--white);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.description {
+  color: var(--metallic-gray);
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+}
+
+.configuratorItem:hover .description {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ctaButton {
+  background: transparent;
+  color: var(--white);
+  border: 2px solid var(--white);
+  padding: 0.8rem 2rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease 0.1s;
+}
+
+.configuratorItem:hover .ctaButton {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ctaButton:hover {
+  background: var(--white);
+  color: var(--black);
+  transform: translateY(-2px);
+}
+
+/* Hover Reveal Effect */
+.hoverReveal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  opacity: 0;
+  transition: all 0.4s ease;
+  z-index: 4;
+}
+
+.hoverTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.hoverSubtitle {
+  font-size: 1.2rem;
+  color: var(--metallic-gray);
+  letter-spacing: 2px;
+}
+
+.configuratorItem:hover .hoverReveal {
+  opacity: 1;
+}
+
+.configuratorItem:hover .content {
+  opacity: 0;
+}
+
+/* Luxury Accents */
+.luxuryBorder {
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+  bottom: 3rem;
+  left: 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+  border-radius: 20px;
+}
+
+.glowEffect {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(28, 105, 212, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.configuratorItem:hover .glowEffect {
+  opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .configuratorGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .configuratorItem:last-child {
+    grid-column: 1 / -1;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .configurator {
+    padding: 6rem 1rem;
+  }
+  
+  .sectionTitle {
+    font-size: 2.5rem;
+  }
+  
+  .configuratorGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .configuratorItem {
+    height: 400px;
+  }
+  
+  .configuratorItem:last-child {
+    grid-column: 1;
+    max-width: none;
+  }
+  
+  .title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sectionTitle {
+    font-size: 2rem;
+  }
+  
+  .configuratorItem {
+    height: 350px;
+  }
+  
+  .content {
+    padding: 2rem 1.5rem;
+  }
+  
+  .title {
+    font-size: 1.6rem;
+  }
+  
+  .hoverTitle {
+    font-size: 2rem;
+  }
+}

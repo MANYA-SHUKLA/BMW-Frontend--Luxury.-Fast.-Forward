@@ -1,0 +1,413 @@
+.models {
+  padding: 8rem 2rem;
+  background: var(--black);
+  position: relative;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.sectionTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #ffffff 0%, #d7d7d7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sectionSubtitle {
+  font-size: 1.1rem;
+  color: var(--metallic-gray);
+  letter-spacing: 1px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Series Filter */
+.seriesFilter {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.filterButton {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--metallic-gray);
+  padding: 1rem 2rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filterButton:hover {
+  background: rgba(28, 105, 212, 0.1);
+  border-color: var(--bmw-blue);
+  color: var(--white);
+}
+
+.filterButton.active {
+  background: var(--bmw-blue);
+  border-color: var(--bmw-blue);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(28, 105, 212, 0.3);
+}
+
+/* Series Info */
+.seriesInfo {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.seriesName {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.seriesDescription {
+  font-size: 1.1rem;
+  color: var(--metallic-gray);
+}
+
+/* Electric Highlight */
+.electricHighlight {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(28, 105, 212, 0.1) 0%, transparent 50%);
+  border-radius: 15px;
+  border: 1px solid rgba(28, 105, 212, 0.3);
+}
+
+.electricBadge {
+  display: inline-block;
+  background: var(--bmw-blue);
+  color: var(--white);
+  padding: 0.5rem 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+
+.electricTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.electricDesc {
+  font-size: 1.1rem;
+  color: var(--metallic-gray);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Models Grid */
+.modelsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.modelCard {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  position: relative;
+  backdrop-filter: blur(10px);
+}
+
+.modelCard:hover {
+  transform: translateY(-10px);
+  border-color: var(--bmw-blue);
+  box-shadow: 0 20px 40px rgba(28, 105, 212, 0.2);
+}
+
+.modelCard.electric {
+  border-color: rgba(28, 105, 212, 0.3);
+}
+
+.modelCard.electric:hover {
+  border-color: var(--bmw-blue);
+  box-shadow: 0 20px 40px rgba(28, 105, 212, 0.3);
+}
+
+.electricTag {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--bmw-blue);
+  color: var(--white);
+  padding: 0.3rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 15px;
+  z-index: 2;
+}
+
+.carImage {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.modelCard:hover .carImage {
+  transform: scale(1.05);
+}
+
+.carInfo {
+  padding: 2rem;
+  position: relative;
+}
+
+.carName {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--white);
+}
+
+.carPrice {
+  font-size: 1.2rem;
+  color: var(--bmw-blue);
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.carFeatures {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+.carFeature {
+  color: var(--metallic-gray);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.carFeature::before {
+  content: '▶';
+  color: var(--bmw-blue);
+  margin-right: 0.5rem;
+  font-size: 0.7rem;
+}
+
+.cardActions {
+  display: flex;
+  gap: 1rem;
+}
+
+.configureButton {
+  background: transparent;
+  color: var(--white);
+  border: 2px solid var(--bmw-blue);
+  padding: 0.8rem 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+  flex: 1;
+}
+
+.configureButton:hover {
+  background: var(--bmw-blue);
+  transform: translateY(-2px);
+}
+
+.testDriveButton {
+  background: transparent;
+  color: var(--metallic-gray);
+  border: 2px solid var(--metallic-gray);
+  padding: 0.8rem 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+  flex: 1;
+}
+
+.testDriveButton:hover {
+  background: var(--metallic-gray);
+  color: var(--black);
+  transform: translateY(-2px);
+}
+
+/* BMW India Note */
+.indiaNote {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.indiaBadge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+  padding: 0.5rem 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+
+.indiaNote p {
+  color: var(--metallic-gray);
+  font-size: 0.9rem;
+}
+
+/* Luxury accent elements */
+.luxuryAccent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(28, 105, 212, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Carousel (kept for reference, but using grid now) */
+.carousel {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  padding: 2rem 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-behavior: smooth;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.carouselControls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.controlButton {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--white);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.controlButton:hover {
+  background: var(--bmw-blue);
+  border-color: var(--bmw-blue);
+  transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .models {
+    padding: 6rem 1rem;
+  }
+  
+  .sectionTitle {
+    font-size: 2.5rem;
+  }
+  
+  .seriesFilter {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .filterButton {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+  
+  .modelsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cardActions {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .sectionTitle {
+    font-size: 2rem;
+  }
+  
+  .carInfo {
+    padding: 1.5rem;
+  }
+  
+  .seriesName {
+    font-size: 1.5rem;
+  }
+  
+  .electricTitle {
+    font-size: 1.5rem;
+  }
+}

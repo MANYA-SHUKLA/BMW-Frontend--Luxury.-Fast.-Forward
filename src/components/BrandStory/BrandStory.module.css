@@ -1,0 +1,310 @@
+.brandStory {
+  padding: 8rem 2rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 50%, #ffffff 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+
+.imageSection {
+  position: relative;
+}
+
+.brandImage {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+}
+
+.imageSection:hover .brandImage {
+  transform: scale(1.02);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+}
+
+.imageBadge {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  background: var(--bmw-blue);
+  color: var(--white);
+  padding: 1rem 2rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  box-shadow: 0 10px 30px rgba(28, 105, 212, 0.3);
+}
+
+/* Content Section */
+.contentSection {
+  padding: 2rem 0;
+}
+
+.sectionBadge {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--black);
+  padding: 0.5rem 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 20px;
+  margin-bottom: 1.5rem;
+}
+
+.sectionTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.highlight {
+  color: var(--bmw-blue);
+  position: relative;
+}
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: currentColor;
+  opacity: 0.3;
+}
+
+.sectionDescription {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+
+.innovationList {
+  list-style: none;
+  margin-bottom: 3rem;
+}
+
+.innovationItem {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  border-left: 4px solid var(--bmw-blue);
+  transition: all 0.3s ease;
+}
+
+.innovationItem:hover {
+  transform: translateX(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.innovationIcon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--bmw-blue), #0a4a9e);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1.5rem;
+  flex-shrink: 0;
+}
+
+.innovationIcon svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--white);
+}
+
+.innovationContent h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--black);
+  margin-bottom: 0.5rem;
+}
+
+.innovationContent p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.ctaButton {
+  background: var(--black);
+  color: var(--white);
+  border: 2px solid var(--black);
+  padding: 1.2rem 3rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaButton:hover {
+  background: transparent;
+  color: var(--black);
+  transform: translateY(-2px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.ctaButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(28, 105, 212, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.ctaButton:hover::before {
+  left: 100%;
+}
+
+
+.quoteSection {
+  margin-top: 4rem;
+  padding: 3rem;
+  background: linear-gradient(135deg, var(--bmw-blue), #0a4a9e);
+  border-radius: 15px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.quoteSection::before {
+  content: '"';
+  position: absolute;
+  top: -30px;
+  left: 50px;
+  font-size: 10rem;
+  color: rgba(255, 255, 255, 0.1);
+  font-family: serif;
+}
+
+.quoteText {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--white);
+  font-style: italic;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.quoteAuthor {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+
+@media (max-width: 1024px) {
+  .contentGrid {
+    gap: 3rem;
+  }
+  
+  .sectionTitle {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .brandStory {
+    padding: 6rem 1rem;
+  }
+  
+  .contentGrid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .imageSection {
+    order: 2;
+  }
+  
+  .contentSection {
+    order: 1;
+    text-align: center;
+  }
+  
+  .sectionTitle {
+    font-size: 2.2rem;
+  }
+  
+  .brandImage {
+    height: 400px;
+  }
+  
+  .innovationItem {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .innovationIcon {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sectionTitle {
+    font-size: 2rem;
+  }
+  
+  .brandImage {
+    height: 300px;
+  }
+  
+  .imageBadge {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  }
+  
+  .quoteText {
+    font-size: 1.2rem;
+  }
+  
+  .ctaButton {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+}
