@@ -74,7 +74,7 @@ const ElectricMobility = () => {
                   {feature.icon}
                 </div>
                 <h3 className={styles.featureTitle}>{feature.title}</h3>
-                <p className={features.description}>{feature.description}</p>
+                <p className={styles.featureDescription}>{feature.description}</p>
               </div>
             ))}
           </div>
