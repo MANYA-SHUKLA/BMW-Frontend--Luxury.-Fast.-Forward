@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef, useMemo, useCallback } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import styles from './Search.module.css';
 
 type Model = {
@@ -53,7 +53,6 @@ const Search = () => {
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const searchRef = useRef<HTMLDivElement>(null);
 
-  // Memoize searchData to prevent recreation on every render
   const searchData = useMemo(() => ({
     models: [
       { id: 1, name: 'BMW 3 Series', type: 'model' as const, category: 'Sedan', price: '₹45.90 Lakh', image: '/api/placeholder/80/60' },
@@ -79,43 +78,18 @@ const Search = () => {
     ]
   }), []);
 
-  // Memoize categories to prevent recreation
-  const categories: Category[] = useMemo(() => [
-    { id: 'all', name: 'All', icon: '🔍', count: 0 },
-    { id: 'models', name: 'Models', icon: '🚗', count: searchData.models.length },
-    { id: 'dealers', name: 'Dealers', icon: '🏢', count: searchData.dealers.length },
-    { id: 'services', name: 'Services', icon: '🔧', count: searchData.services.length },
-    { id: 'content', name: 'Content', icon: '📚', count: searchData.content.length }
-  ], [searchData]);
-
-  // Memoize performSearch function
-  const performSearch = useCallback((query: string) => {
-    if (!query.trim()) {
-      setSearchResults([]);
-      return;
-    }
-
-    const queryLower = query.toLowerCase();
-    const allResults: SearchItem[] = [
-      ...searchData.models.map(item => ({ ...item, category: 'models' })),
-      ...searchData.dealers.map(item => ({ ...item, category: 'dealers' })),
-      ...searchData.services.map(item => ({ ...item, category: 'services' })),
-      ...searchData.content.map(item => ({ ...item, category: 'content' }))
+  const categories: Category[] = useMemo(() => {
+    const totalCount = searchData.models.length + searchData.dealers.length + 
+                      searchData.services.length + searchData.content.length;
+    
+    return [
+      { id: 'all', name: 'All', icon: '🔍', count: totalCount },
+      { id: 'models', name: 'Models', icon: '🚗', count: searchData.models.length },
+      { id: 'dealers', name: 'Dealers', icon: '🏢', count: searchData.dealers.length },
+      { id: 'services', name: 'Services', icon: '🔧', count: searchData.services.length },
+      { id: 'content', name: 'Content', icon: '📚', count: searchData.content.length }
     ];
-
-    const filtered = allResults.filter((item) => {
-      const nameMatch = item.name.toLowerCase().includes(queryLower);
-      const descMatch = 'description' in item && item.description.toLowerCase().includes(queryLower);
-      const cityMatch = 'city' in item && item.city.toLowerCase().includes(queryLower);
-      return nameMatch || descMatch || cityMatch;
-    });
-
-    const finalResults = activeCategory === 'all' 
-      ? filtered 
-      : filtered.filter(item => item.category === activeCategory);
-
-    setSearchResults(finalResults);
-  }, [searchData, activeCategory]);
+  }, [searchData]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -135,19 +109,35 @@ const Search = () => {
     };
   }, [isSearchOpen]);
 
-  // Fixed search effect with proper debouncing
   useEffect(() => {
     if (!searchQuery.trim()) {
       setSearchResults([]);
       return;
     }
 
-    const timeoutId = setTimeout(() => {
-      performSearch(searchQuery);
-    }, 300);
+    const query = searchQuery.toLowerCase();
+    const allResults: SearchItem[] = [
+      ...searchData.models,
+      ...searchData.dealers,
+      ...searchData.services,
+      ...searchData.content
+    ];
 
-    return () => clearTimeout(timeoutId);
-  }, [searchQuery, performSearch]);
+    const filtered = allResults.filter((item) => {
+      const nameMatch = item.name.toLowerCase().includes(query);
+      const descMatch = 'description' in item && item.description.toLowerCase().includes(query);
+      const cityMatch = 'city' in item && item.city.toLowerCase().includes(query);
+      const categoryMatch = 'category' in item && item.category.toLowerCase().includes(query);
+      
+      return nameMatch || descMatch || cityMatch || categoryMatch;
+    });
+
+    if (activeCategory !== 'all') {
+      setSearchResults(filtered.filter(item => item.type === activeCategory));
+    } else {
+      setSearchResults(filtered);
+    }
+  }, [searchQuery, activeCategory, searchData]);
 
   const quickSearches: string[] = [
     'BMW 3 Series', 'BMW X1', 'Nearest Dealer', 'Service Booking', 'Electric Vehicles'
@@ -168,6 +158,7 @@ const Search = () => {
   const clearSearch = () => {
     setSearchQuery('');
     setSearchResults([]);
+    setActiveCategory('all');
   };
 
   const getIconForType = (type: string) => {
@@ -273,16 +264,16 @@ const Search = () => {
                             </div>
                             <div className={styles.resultContent}>
                               <div className={styles.resultTitle}>{result.name}</div>
-                              {'category' in result && (
+                              {'category' in result && result.category && (
                                 <div className={styles.resultCategory}>{result.category}</div>
                               )}
                               {'price' in result && result.price && (
                                 <div className={styles.resultPrice}>{result.price}</div>
                               )}
-                              {'city' in result && (
+                              {'city' in result && result.city && (
                                 <div className={styles.resultLocation}>{result.city} • {result.distance}</div>
                               )}
-                              {'description' in result && (
+                              {'description' in result && result.description && (
                                 <div className={styles.resultDescription}>{result.description}</div>
                               )}
                             </div>
