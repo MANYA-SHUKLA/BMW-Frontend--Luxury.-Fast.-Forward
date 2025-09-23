@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import styles from './PromoBanner.module.css';
 
 const PromoBanner = () => {
@@ -62,20 +63,24 @@ const PromoBanner = () => {
   return (
     <section className={styles.promoBanner}>
       <div className={styles.luxuryBorder}></div>
-      
+
       <div className={styles.container}>
         {/* Image Section */}
         <div className={styles.imageSection}>
-          <img 
-            src="https://images.pexels.com/photos/1209777/pexels-photo-1209777.jpeg" 
+          <Image
+            src="https://images.pexels.com/photos/1209777/pexels-photo-1209777.jpeg"
             alt="BMW Luxury Interior"
             className={styles.promoImage}
+            width={1200}
+            height={800}
             onError={(e) => {
-              e.currentTarget.src = 'https://images.pexels.com/photos/164634/pexels-photo-164634.jpeg';
+              const target = e.currentTarget as HTMLImageElement;
+              target.src =
+                'https://images.pexels.com/photos/164634/pexels-photo-164634.jpeg';
             }}
           />
           <div className={styles.imageOverlay}></div>
-          
+
           {/* Countdown Timer */}
           <div className={styles.countdown}>
             <div className={styles.countdownTitle}>Offer Ends In</div>
@@ -103,11 +108,11 @@ const PromoBanner = () => {
         {/* Content Section */}
         <div className={styles.contentSection}>
           <div className={styles.promoBadge}>Exclusive Offers</div>
-          
+
           <h2 className={styles.promoTitle}>
             Special <span className={styles.highlight}>Finance Deals</span> for BMW India
           </h2>
-          
+
           <p className={styles.promoDescription}>
             Avail exclusive financial benefits and special EMI schemes designed for Indian customers. 
             Limited period offers with incredible savings.
@@ -123,7 +128,7 @@ const PromoBanner = () => {
                 <div className={styles.financeDesc}>For 36 months tenure</div>
               </div>
             </div>
-            
+
             <div className={styles.financeCard}>
               <div className={styles.financeIcon}>📅</div>
               <div className={styles.financeDetails}>
@@ -133,7 +138,7 @@ const PromoBanner = () => {
               </div>
             </div>
           </div>
-          
+
           {/* Special Offers Grid */}
           <div className={styles.offersGrid}>
             {offers.map((offer, index) => (
@@ -149,7 +154,7 @@ const PromoBanner = () => {
               </div>
             ))}
           </div>
-          
+
           {/* EMI Calculator Preview */}
           <div className={styles.emiPreview}>
             <div className={styles.emiTitle}>Monthly EMI Examples</div>
@@ -168,7 +173,7 @@ const PromoBanner = () => {
               </div>
             </div>
           </div>
-          
+
           <div className={styles.ctaContainer}>
             <button className={styles.ctaPrimary}>
               Calculate Your EMI
