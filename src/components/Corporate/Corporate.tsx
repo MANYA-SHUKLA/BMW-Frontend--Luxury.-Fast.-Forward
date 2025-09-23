@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import styles from './Corporate.module.css';
 
 const Corporate = () => {
@@ -174,11 +175,16 @@ const Corporate = () => {
                 <div className={styles.heroContent}>
                   <h3>Pioneering Luxury Mobility in India</h3>
                   <p>Since 2007, BMW India has been redefining the luxury automotive experience with German engineering excellence tailored for Indian roads and preferences.</p>
-                  <img
-                    src="https://stimg.cardekho.com/images/carexteriorimages/930x620/BMW/5-Series/10182/1750747451665/front-left-side-47.jpg"
-                    alt="BMW luxury car in India"
-                    style={{ width: '100%', height: 'auto', borderRadius: '12px', marginTop: '12px' }}
-                  />
+                  <div className={styles.imageContainer}>
+                    <Image
+                      src="https://stimg.cardekho.com/images/carexteriorimages/930x620/BMW/5-Series/10182/1750747451665/front-left-side-47.jpg"
+                      alt="BMW luxury car in India"
+                      width={800}
+                      height={450}
+                      className={styles.heroImage}
+                      priority
+                    />
+                  </div>
                 </div>
                 <div className={styles.heroStats}>
                   <div className={styles.statCard}>
@@ -251,7 +257,6 @@ const Corporate = () => {
             </div>
           )}
 
-        
           {activeTab === 'careers' && (
             <div className={styles.careersSection}>
               <div className={styles.careersIntro}>
@@ -344,7 +349,6 @@ const Corporate = () => {
             </div>
           )}
 
-        
           {activeTab === 'governance' && (
             <div className={styles.governanceSection}>
               <div className={styles.governanceIntro}>
@@ -443,7 +447,6 @@ const Corporate = () => {
             </div>
           )}
 
-        
           {activeTab === 'foundation' && (
             <div className={styles.foundationSection}>
               <div className={styles.foundationIntro}>
