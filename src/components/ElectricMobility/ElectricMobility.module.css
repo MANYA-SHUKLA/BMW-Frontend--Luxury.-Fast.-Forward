@@ -193,7 +193,6 @@
   left: 100%;
 }
 
-/* Futuristic Background Elements */
 .futuristicBg {
   position: absolute;
   top: 0;
@@ -240,7 +239,7 @@
   50% { transform: translateY(-20px) scale(1.1); }
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
   .electric {
     padding: 6rem 1rem;

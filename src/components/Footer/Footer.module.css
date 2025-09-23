@@ -18,7 +18,7 @@
   margin-bottom: 3rem;
 }
 
-/* Brand Section */
+
 .brandSection {
   display: flex;
   flex-direction: column;
@@ -121,7 +121,7 @@
   margin-bottom: 1rem;
 }
 
-/* Support Links */
+
 .supportLink {
   color: var(--metallic-gray);
   text-decoration: none;
@@ -159,7 +159,6 @@
   color: #888;
 }
 
-/* Contact Information */
 .contactInfo {
   margin-top: 2rem;
   padding-top: 2rem;
@@ -198,7 +197,7 @@
   color: var(--bmw-blue);
 }
 
-/* Legal Links */
+
 .legalLinkItem {
   color: var(--metallic-gray);
   text-decoration: none;
@@ -226,7 +225,7 @@
   color: #888;
 }
 
-/* BMW India Info */
+
 .indiaInfo {
   background: rgba(255, 255, 255, 0.02);
   border-radius: 10px;
@@ -249,7 +248,6 @@
   line-height: 1.6;
 }
 
-/* Bottom Section */
 .footerBottom {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 2rem;
@@ -323,7 +321,7 @@
   box-shadow: 0 5px 15px rgba(28, 105, 212, 0.3);
 }
 
-/* Responsive Design */
+
 @media (max-width: 1200px) {
   .footerContent {
     grid-template-columns: 2fr 1fr 1fr;

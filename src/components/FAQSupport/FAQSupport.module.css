@@ -34,7 +34,6 @@
   gap: 3rem;
 }
 
-/* Categories Sidebar */
 .categoriesSidebar {
   background: white;
   border-radius: 15px;
@@ -148,7 +147,6 @@
   margin: 0;
 }
 
-/* FAQ Content */
 .faqContent {
   background: white;
   border-radius: 15px;
@@ -247,7 +245,7 @@
   margin-bottom: 0;
 }
 
-/* Support Tools */
+
 .supportTools {
   margin-bottom: 3rem;
 }
@@ -315,7 +313,7 @@
   background: #1556a0;
 }
 
-/* Contact Section */
+
 .contactSection h4 {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.5rem;

@@ -128,7 +128,7 @@ const Header = () => {
   return (
     <header className={`${styles.header} ${isScrolled ? styles.headerSolid : styles.headerTransparent}`}>
       <nav className={styles.navContainer}>
-        {/* Logo */}
+     
         <Link href="/" className={styles.logo} aria-label="BMW Home">
           <img 
             src="https://www.bmw.in/content/dam/bmw/common/images/logo-icons/BMW/BMW_White_Logo.svg.asset.1670245093434.svg" 
@@ -137,7 +137,6 @@ const Header = () => {
           />
         </Link>
 
-        {/* Navigation Links with Dropdowns */}
         <ul className={styles.navLinks}>
           {navigationData.map((item, index) => (
             <li 
@@ -150,7 +149,6 @@ const Header = () => {
                 {item.title}
               </a>
               
-              {/* Dropdown Menu */}
               {activeDropdown === item.title && (
                 <div className={item.type === 'mega' ? styles.megaDropdown : styles.dropdown}>
                   {item.type === 'mega' ? (
@@ -187,7 +185,7 @@ const Header = () => {
           ))}
         </ul>
 
-        {/* Right Side Icons - include Search component */}
+      
         <div className={styles.navIcons}>
           <Search />
           

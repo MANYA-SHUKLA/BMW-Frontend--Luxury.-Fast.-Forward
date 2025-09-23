@@ -157,7 +157,7 @@ const FAQSupport = () => {
         </div>
 
         <div className={styles.content}>
-          {/* Categories Sidebar */}
+   
           <div className={styles.categoriesSidebar}>
             <h3>Support Categories</h3>
             <div className={styles.categoryList}>
@@ -176,7 +176,7 @@ const FAQSupport = () => {
               ))}
             </div>
 
-            {/* Quick Support Card */}
+            
             <div className={styles.quickSupport}>
               <h4>Need Immediate Help?</h4>
               <div className={styles.emergencyContact}>
@@ -190,7 +190,7 @@ const FAQSupport = () => {
             </div>
           </div>
 
-          {/* FAQ Content */}
+        
           <div className={styles.faqContent}>
             <div className={styles.categoryHeader}>
               <h3>
@@ -221,7 +221,7 @@ const FAQSupport = () => {
               ))}
             </div>
 
-            {/* Support Tools */}
+          
             <div className={styles.supportTools}>
               <h4>Support Tools & Resources</h4>
               <div className={styles.toolsGrid}>
@@ -252,7 +252,7 @@ const FAQSupport = () => {
               </div>
             </div>
 
-            {/* Contact Information */}
+         
             <div className={styles.contactSection}>
               <h4>Contact Support</h4>
               <div className={styles.contactGrid}>

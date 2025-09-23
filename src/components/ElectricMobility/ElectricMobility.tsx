@@ -35,7 +35,7 @@ const ElectricMobility = () => {
 
   return (
     <section id="electric" className={styles.electric}>
-      {/* Futuristic Background Elements */}
+     
       <div className={styles.futuristicBg}>
         <div className={styles.circuitLine}></div>
         <div className={styles.circuitLine}></div>
