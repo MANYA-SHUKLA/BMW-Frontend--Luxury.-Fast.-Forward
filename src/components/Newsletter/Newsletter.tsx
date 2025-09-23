@@ -4,13 +4,13 @@ import { useState } from 'react';
 import styles from './Newsletter.module.css';
 
 const Newsletter = () => {
-  const [email, setEmail] = useState('');
-  const [showPopup, setShowPopup] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [email, setEmail] = useState<string>(''); // added type
+  const [showPopup, setShowPopup] = useState<boolean>(false); // added type
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false); // added type
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => { // typed event
     e.preventDefault();
-    
+
     if (!email) return;
 
     setIsSubmitting(true);
@@ -20,7 +20,7 @@ const Newsletter = () => {
 
     // In a real app, this would connect to a newsletter service
     console.log('Newsletter signup:', email);
-    
+
     // Show success popup
     setShowPopup(true);
     setEmail('');
@@ -41,7 +41,7 @@ const Newsletter = () => {
       <section className={styles.newsletter}>
         <div className={styles.luxuryBorder}></div>
         <div className={styles.accentLine}></div>
-        
+
         <div className={styles.container}>
           <div className={styles.content}>
             <h2 className={styles.sectionTitle}>Stay Connected</h2>
@@ -49,7 +49,7 @@ const Newsletter = () => {
               Be the first to receive exclusive updates, new model announcements, 
               and special offers directly from BMW.
             </p>
-            
+
             <form onSubmit={handleSubmit} className={styles.form}>
               <div className={styles.inputGroup}>
                 <input
@@ -74,7 +74,7 @@ const Newsletter = () => {
                 )}
               </button>
             </form>
-            
+
             <p className={styles.privacyNote}>
               By subscribing, you agree to our <a href="#privacy">Privacy Policy</a>. 
               You can unsubscribe at any time.
@@ -90,16 +90,16 @@ const Newsletter = () => {
             <button className={styles.closeButton} onClick={closePopup}>
               ×
             </button>
-            
+
             <div className={styles.popupIcon}>✓</div>
-            
+
             <h3 className={styles.popupTitle}>Subscription Successful!</h3>
-            
+
             <p className={styles.popupMessage}>
               Thank you for subscribing to BMW updates. You'll receive exclusive news, 
               offers, and model announcements directly in your inbox.
             </p>
-            
+
             <div className={styles.popupFeatures}>
               <div className={styles.featureItem}>
                 <span className={styles.featureIcon}>🎁</span>
@@ -114,7 +114,7 @@ const Newsletter = () => {
                 <span>Event Invitations</span>
               </div>
             </div>
-            
+
             <button className={styles.popupCTA} onClick={closePopup}>
               Continue Exploring
             </button>
