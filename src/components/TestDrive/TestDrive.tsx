@@ -97,7 +97,7 @@ const TestDrive = () => {
                 <span>{formData.preferredModel}</span>
               </div>
               <div className={styles.detailItem}>
-                <span>Date & Time:</span>
+                <span>Date &amp; Time:</span>
                 <span>{formData.preferredDate} at {formData.preferredTime}</span>
               </div>
               <div className={styles.detailItem}>
@@ -256,7 +256,7 @@ const TestDrive = () => {
             <div className={styles.infoCard}>
               <h3>Why Test Drive a BMW?</h3>
               <ul>
-                <li>Experience BMW's legendary driving dynamics</li>
+                <li>Experience BMW&apos;s legendary driving dynamics</li>
                 <li>Feel the precision of German engineering</li>
                 <li>Explore advanced technology features</li>
                 <li>Personalized consultation with BMW experts</li>

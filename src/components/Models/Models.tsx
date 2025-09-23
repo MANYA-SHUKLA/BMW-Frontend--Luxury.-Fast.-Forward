@@ -187,7 +187,6 @@ const Models = () => {
           </p>
         </div>
 
-        {/* Series Filter */}
         <div className={styles.seriesFilter}>
           <button 
             className={`${styles.filterButton} ${activeSeries === 'all' ? styles.active : ''}`}
@@ -212,7 +211,6 @@ const Models = () => {
           ))}
         </div>
 
-        {/* Series Info */}
         {activeSeries !== 'all' && activeSeries !== 'electric' && (
           <div className={styles.seriesInfo}>
             {modelSeries.find(series => series.id === activeSeries) && (
@@ -228,7 +226,6 @@ const Models = () => {
           </div>
         )}
 
-        {/* Electric Vehicles Highlight */}
         {activeSeries === 'electric' && (
           <div className={styles.electricHighlight}>
             <div className={styles.electricBadge}>⚡ BMW i</div>
@@ -240,7 +237,7 @@ const Models = () => {
           </div>
         )}
 
-        {/* Models Grid */}
+        
         <div className={styles.modelsGrid}>
           {filteredModels.map((car) => (
             <div key={car.id} className={`${styles.modelCard} ${car.electric ? styles.electric : ''}`}>
