@@ -3,35 +3,73 @@
 import { useState, useEffect, useRef } from 'react';
 import styles from './Search.module.css';
 
+// Define types for each search item
+type Model = {
+  id: number;
+  name: string;
+  type: 'model';
+  category: string;
+  price: string;
+  image: string;
+};
+
+type Dealer = {
+  id: number;
+  name: string;
+  type: 'dealer';
+  category: string;
+  city: string;
+  distance: string;
+};
+
+type Service = {
+  id: number;
+  name: string;
+  type: 'service';
+  category: string;
+  description: string;
+};
+
+type Content = {
+  id: number;
+  name: string;
+  type: 'content';
+  category: string;
+  description: string;
+};
+
+// Unified search item type
+type SearchItem = Model | Dealer | Service | Content;
+
 const Search = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
-  const [searchResults, setSearchResults] = useState<any[]>([]);
+  const [searchResults, setSearchResults] = useState<SearchItem[]>([]);
   const [activeCategory, setActiveCategory] = useState('all');
   const searchRef = useRef<HTMLDivElement>(null);
 
   const searchData = {
     models: [
-      { id: 1, name: 'BMW 3 Series', type: 'model', category: 'Sedan', price: '₹45.90 Lakh', image: '/api/placeholder/80/60' },
-      { id: 2, name: 'BMW X1', type: 'model', category: 'SUV', price: '₹42.50 Lakh', image: '/api/placeholder/80/60' },
-      { id: 3, name: 'BMW i4', type: 'model', category: 'Electric', price: '₹72.90 Lakh', image: '/api/placeholder/80/60' },
-      { id: 4, name: 'BMW 5 Series', type: 'model', category: 'Sedan', price: '₹67.90 Lakh', image: '/api/placeholder/80/60' },
-      { id: 5, name: 'BMW X3', type: 'model', category: 'SUV', price: '₹62.90 Lakh', image: '/api/placeholder/80/60' }
+      { id: 1, name: 'BMW 3 Series', type: 'model' as const, category: 'Sedan', price: '₹45.90 Lakh', image: '/api/placeholder/80/60' },
+      { id: 2, name: 'BMW X1', type: 'model' as const, category: 'SUV', price: '₹42.50 Lakh', image: '/api/placeholder/80/60' },
+      { id: 3, name: 'BMW i4', type: 'model' as const, category: 'Electric', price: '₹72.90 Lakh', image: '/api/placeholder/80/60' },
+      { id: 4, name: 'BMW 5 Series', type: 'model' as const, category: 'Sedan', price: '₹67.90 Lakh', image: '/api/placeholder/80/60' },
+      { id: 5, name: 'BMW X3', type: 'model' as const, category: 'SUV', price: '₹62.90 Lakh', image: '/api/placeholder/80/60' }
     ],
     dealers: [
-      { id: 101, name: 'BMW Deutsche Motoren', type: 'dealer', city: 'Delhi', category: 'Dealer', distance: '2.5 km' },
-      { id: 102, name: 'BMW Infinity Cars', type: 'dealer', city: 'Mumbai', category: 'Dealer', distance: '5.1 km' },
-      { id: 103, name: 'BMW Bavaria Motors', type: 'dealer', city: 'Bangalore', category: 'Dealer', distance: '3.2 km' }
+      { id: 101, name: 'BMW Deutsche Motoren', type: 'dealer' as const, city: 'Delhi', category: 'Dealer', distance: '2.5 km' },
+      { id: 102, name: 'BMW Infinity Cars', type: 'dealer' as const, city: 'Mumbai', category: 'Dealer', distance: '5.1 km' },
+      { id: 103, name: 'BMW Bavaria Motors', type: 'dealer' as const, city: 'Bangalore', category: 'Dealer', distance: '3.2 km' }
     ],
     services: [
-      { id: 201, name: 'Service & Maintenance', type: 'service', category: 'Service', description: 'Book your service appointment' },
-      { id: 202, name: 'Test Drive Booking', type: 'service', category: 'Service', description: 'Schedule a test drive' },
-      { id: 203, name: 'Financial Services', type: 'service', category: 'Finance', description: 'EMI and loan options' }
+      { id: 201, name: 'Service & Maintenance', type: 'service' as const, category: 'Service', description: 'Book your service appointment' },
+      { id: 202, name: 'Test Drive Booking', type: 'service' as const, category: 'Service', description: 'Schedule a test drive' },
+      { id: 203, name: 'Financial Services', type: 'service' as const, category: 'Finance', description: 'EMI and loan options' }
     ],
     content: [
-      { id: 301, name: 'BMW Electric Vehicles', type: 'content', category: 'Technology', description: 'Learn about BMW i models' },
-      { id: 302, name: 'BMW Warranty Information', type: 'content', category: 'Support', description: 'Warranty terms and conditions' },
-      { id: 303, name: 'BMW ConnectedDrive', type: 'content', category: 'Technology', description: 'Digital services overview' }
+      { id: 301, name: 'BMW Electric Vehicles', type: 'content' as const, category: 'Technology', description: 'Learn about BMW i models' },
+      { id: 302, name: 'BMW Warranty Information', type: 'content' as const, category: 'Support', description: 'Warranty terms and conditions' },
+      { id: 303, name: 'BMW ConnectedDrive', type: 'content' as const, category: 'Technology', description: 'Digital services overview' }
     ]
   };
 
@@ -68,7 +106,7 @@ const Search = () => {
     }
 
     const query = searchQuery.toLowerCase();
-    const allResults = [
+    const allResults: SearchItem[] = [
       ...searchData.models.map(item => ({ ...item, category: 'models' })),
       ...searchData.dealers.map(item => ({ ...item, category: 'dealers' })),
       ...searchData.services.map(item => ({ ...item, category: 'services' })),
@@ -77,8 +115,8 @@ const Search = () => {
 
     const filtered = allResults.filter((item) => {
       const nameMatch = item.name.toLowerCase().includes(query);
-      const descMatch = 'description' in item && typeof item.description === 'string' && item.description.toLowerCase().includes(query);
-      const cityMatch = 'city' in item && typeof item.city === 'string' && item.city.toLowerCase().includes(query);
+      const descMatch = 'description' in item && item.description.toLowerCase().includes(query);
+      const cityMatch = 'city' in item && item.city.toLowerCase().includes(query);
       return nameMatch || descMatch || cityMatch;
     });
 
@@ -96,7 +134,7 @@ const Search = () => {
   const openSearch = () => {
     setIsSearchOpen(true);
     setTimeout(() => {
-      const input = document.getElementById('search-input');
+      const input = document.getElementById('search-input') as HTMLInputElement | null;
       if (input) input.focus();
     }, 100);
   };
@@ -220,16 +258,16 @@ const Search = () => {
                             </div>
                             <div className={styles.resultContent}>
                               <div className={styles.resultTitle}>{result.name}</div>
-                              {result.category && (
+                              {'category' in result && (
                                 <div className={styles.resultCategory}>{result.category}</div>
                               )}
-                              {result.price && (
+                              {'price' in result && result.price && (
                                 <div className={styles.resultPrice}>{result.price}</div>
                               )}
-                              {result.city && (
+                              {'city' in result && (
                                 <div className={styles.resultLocation}>{result.city} • {result.distance}</div>
                               )}
-                              {result.description && (
+                              {'description' in result && (
                                 <div className={styles.resultDescription}>{result.description}</div>
                               )}
                             </div>
