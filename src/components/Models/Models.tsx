@@ -24,7 +24,7 @@ interface ModelSeries {
 
 const Models = () => {
   const [activeSeries, setActiveSeries] = useState<string>('all');
-  // Removed unused carouselRef
+
 
   const modelSeries: ModelSeries[] = [
     {
@@ -184,7 +184,7 @@ const Models = () => {
         activeSeries === 'electric' ? model.electric : model.series === activeSeries
       );
 
-  // Fallback image for error handling
+
   const fallbackImage = 'https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg';
 
   const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
@@ -207,7 +207,7 @@ const Models = () => {
           </p>
         </div>
 
-        {/* Series Filter */}
+       
         <div className={styles.seriesFilter}>
           <button
             className={`${styles.filterButton} ${activeSeries === 'all' ? styles.active : ''}`}
@@ -232,7 +232,7 @@ const Models = () => {
           ))}
         </div>
 
-        {/* Series Info */}
+       
         {activeSeries !== 'all' && activeSeries !== 'electric' && currentSeries && (
           <div className={styles.seriesInfo}>
             <h3 className={styles.seriesName}>{currentSeries.name}</h3>
@@ -240,7 +240,7 @@ const Models = () => {
           </div>
         )}
 
-        {/* Electric Vehicles Highlight */}
+      
         {activeSeries === 'electric' && (
           <div className={styles.electricHighlight}>
             <div className={styles.electricBadge}>⚡ BMW i</div>
@@ -251,7 +251,7 @@ const Models = () => {
           </div>
         )}
 
-        {/* Models Grid */}
+       
         <div className={styles.modelsGrid}>
           {filteredModels.map((car) => (
             <div key={car.id} className={`${styles.modelCard} ${car.electric ? styles.electric : ''}`}>
