@@ -73,7 +73,7 @@
   overflow: hidden;
 }
 
-/* Service Booking Styles */
+
 .serviceBooking {
   display: grid;
   grid-template-columns: 2fr 1fr;
