@@ -90,7 +90,7 @@ const ServiceCenter = () => {
 
   const handleServiceSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate service booking
+  
     alert('Service appointment booked successfully! You will receive a confirmation email.');
     setServiceForm({
       vehicleModel: '',
