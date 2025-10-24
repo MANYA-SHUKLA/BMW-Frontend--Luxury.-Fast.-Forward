@@ -61,7 +61,7 @@
   font-size: 1.1rem;
   transition: all 0.3s ease;
   background: #f8f9fa;
-  color: #000 !important; /* ensure typed text is visible */
+  color: #000 !important; 
   -webkit-text-fill-color: #000; /* fix for WebKit */
   caret-color: var(--bmw-blue);
 }
