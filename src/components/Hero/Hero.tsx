@@ -62,7 +62,7 @@ const Hero = () => {
 
   return (
     <section className={styles.hero}>
-      {/* Background Slides */}
+   
       <div 
         className={styles.backgroundImage}
         style={{ backgroundImage: `url(${current.background})` }}
