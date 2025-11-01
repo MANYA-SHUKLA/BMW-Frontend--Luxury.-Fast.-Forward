@@ -364,7 +364,6 @@
   transform: scale(1.1);
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .models {
     padding: 6rem 1rem;
