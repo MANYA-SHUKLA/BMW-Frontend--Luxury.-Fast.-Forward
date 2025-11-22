@@ -1,36 +1,137 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+```markdown
+# BMW Frontend — Luxury. Fast. Forward.
 
-## Getting Started
+A performant, accessible frontend implementation for the BMW showcase application.
 
-First, run the development server:
+Made by Manya Shukla
 
+---
+
+Table of Contents
+- [About](#about)
+- [Quick start](#quick-start)
+- [Project goals](#project-goals)
+- [Folder structure](#folder-structure)
+- [Keeping the tree accurate](#keeping-the-tree-accurate)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+
+## About
+
+This repository contains the frontend source for the BMW — Luxury. Fast. Forward. project. It focuses on clean, reusable components, responsive design, and fast local development workflows.
+
+## Quick start
+
+Prerequisites
+- Node.js (LTS recommended)
+- npm or yarn
+
+Install dependencies
 ```bash
-npm run dev
+npm install
 # or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+yarn
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Run development server
+```bash
+npm start
+# or
+yarn start
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Build for production
+```bash
+npm run build
+# or
+yarn build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Run tests
+```bash
+npm test
+# or
+yarn test
+```
 
-## Learn More
+## Project goals
 
-To learn more about Next.js, take a look at the following resources:
+- Showcase BMW models and features with performant UI.
+- Maintainable, modular component architecture.
+- Accessibility and responsive design.
+- Fast local builds and a pleasant developer experience.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Folder structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Below is a visual representation of the repository layout to help contributors find files quickly. Keep this tree to a shallow depth to remain readable — update it if the repository structure changes.
 
-## Deploy on Vercel
+.
+├── .github/                      # GitHub workflows, issue & PR templates
+│   └── workflows/
+│       └── ci.yml
+├── public/                       # Static assets served directly
+│   ├── index.html
+│   └── assets/
+├── src/                          # Application source code
+│   ├── assets/                   # Images, icons, fonts
+│   ├── components/               # Reusable UI components
+│   │   ├── Header/
+│   │   │   ├── Header.jsx
+│   │   │   └── Header.module.css
+│   │   ├── Footer/
+│   │   └── common/               # Buttons, Input, Icon components
+│   ├── pages/                    # Top-level pages (routing targets)
+│   │   ├── Home/
+│   │   │   └── Home.jsx
+│   │   └── Models/
+│   ├── routes/                   # Route definitions and guards
+│   ├── hooks/                    # Custom React hooks
+│   ├── services/                 # API clients, data fetchers
+│   ├── stores/                   # State management (context / redux)
+│   ├── utils/                    # Utility functions and helpers
+│   ├── styles/                   # Global styles, variables, themes
+│   ├── App.jsx
+│   └── index.jsx
+├── .env                          # Environment variables (not committed)
+├── package.json
+├── package-lock.json / yarn.lock
+├── README.md                      # <-- This file
+└── .gitignore
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Notes:
+- Replace any placeholder entries above to match the repository's actual files.
+- Keep node_modules, build artifacts, and large assets out of the tree in the README.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Keeping the tree accurate
+
+Option A — Generate quickly (macOS / Linux with tree installed):
+```bash
+# from repo root, ignore node_modules and build artifacts, depth 2
+tree -a --dirsfirst -I 'node_modules|dist|build' -L 2
+```
+
+Option B — Node tool example:
+```bash
+npx dir-structure --depth 2 --exclude node_modules,dist,build > FOLDER_STRUCTURE.md
+```
+
+When you regenerate, paste the updated output into this README under "Folder structure".
+
+## Contributing
+
+- Fork the repository and open a pull request for changes.
+- Follow existing style conventions and run linters/tests locally before submitting.
+- Write clear, focused commits and descriptive PR titles.
+
+## License
+
+Specify project license here (for example, MIT). Add LICENSE file at repository root.
+
+## Contact
+
+Made by Manya Shukla
+- GitHub: https://github.com/MANYA-SHUKLA
+- For questions or collaboration — open an issue or PR.
+
+```
