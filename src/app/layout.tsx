@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import type { Viewport } from 'next';
 import './globals.css'
-
 export const metadata: Metadata = {
   title: 'BMW - Luxury. Fast. Forward.',
   description: 'Experience the ultimate driving machine with BMW luxury vehicles.',
